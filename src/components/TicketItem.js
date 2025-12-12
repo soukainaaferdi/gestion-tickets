@@ -1,0 +1,30 @@
+// components/TicketItem.js
+import { calculateHours } from "../utils/timeUtils";
+import { useDispatch } from "react-redux";
+import { resolveTicket } from "../features/tickets/ticketsSlice";
+
+const TicketItem = ({ ticket }) => {
+  const dispatch = useDispatch();
+  const hours = calculateHours(ticket.createdAt);
+  const isLate = hours >= 48 && ticket.status !== "résolu";
+
+  const handleResolve = () => {
+    dispatch(resolveTicket(ticket));
+  };
+
+  return (
+    <div className="card p-3 mb-2 shadow-sm">
+      <h5>{ticket.title}</h5>
+
+      <span className={`badge ${isLate ? "bg-danger" : "bg-secondary"}`}>
+        {isLate ? "En retard (48h+)" : `${hours}h`}
+      </span>
+
+      <button className="btn btn-success mt-2" onClick={handleResolve}>
+        Marquer résolu
+      </button>
+    </div>
+  );
+};
+
+export default TicketItem;
