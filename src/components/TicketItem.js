@@ -1,11 +1,11 @@
 // components/TicketItem.js
 import { calculateHours } from "../utils/timeUtils";
 import { useDispatch } from "react-redux";
-import { resolveTicket } from "../features/tickets/ticketsSlice";
+import {resolveTicket}from"../redux/ticketsSlice";
 
 const TicketItem = ({ ticket }) => {
   const dispatch = useDispatch();
-  const hours = calculateHours(ticket.createdAt);
+  const hours = calculateHours(ticket.dateCreation);
   const isLate = hours >= 48 && ticket.status !== "résolu";
 
   const handleResolve = () => {
