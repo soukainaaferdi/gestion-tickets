@@ -8,7 +8,7 @@ const TicketDetail = () => {
      const {id}= useParams()
      const [ticket, setTicket] = useState(null)
     useEffect(()=>{
-        axios.get(`http://localhost:5000/tickets/${id}`)
+        axios.get(http://localhost:5000/tickets/${id})
         .then(res => setTicket(res.data))
         .catch(console.error)
     }, [id])
@@ -35,11 +35,11 @@ const TicketDetail = () => {
                         <p><strong>Date de creation :</strong> {ticket.dateCreation.toLocaleString("fr-FR")}</p>
                     <p><strong>Temps écoulé depuis creation :</strong><span className="badge bg-info text-dark">{hours} H</span> </p>
                         <p><strong>Date de résolution :</strong> {ticket.dateResolution || "Non résolu"}</p>
-                        <p><strong>Badge retard : </strong>{isLate ? "En retard ⚠️" : "OK ✅"}</p>
+                        <p><strong>Badge retard : </strong>{isLate ? "En retard ⚠" : "OK ✅"}</p>
                         <Link to="/tickets">
                             <button className="btn btn-warning">Retour</button>
                         </Link>
-                        <Link to={`/tickets/modifier/${ticket.id}`}>
+                        <Link to={/tickets/modifier/${ticket.id}}>
                             <button className="btn btn-primary mx-2">Modifier</button>
                         </Link>
                     </div>
@@ -78,7 +78,7 @@ const TicketDetail = () => {
                     <Link to="/detail">
                     <button className="btn btn-primary mx-2">Détail</button>
                     </Link>
-                    <Link to={`/update/${ticket.id}`}>
+                    <Link to={/update/${ticket.id}}>
                     <button className="btn btn-secondary">Modifier</button>
                     </Link>
                 </div>
