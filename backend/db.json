@@ -1,7 +1,7 @@
 {
   "tickets": [
     {
-      "id": 1,
+      "id": "1",
       "titre": "Problème technique",
       "description": "Impossible de se connecter au VPN",
       "categorie": "Technique",
@@ -9,11 +9,11 @@
       "statut": "Nouveau",
       "nomClient": "Client A",
       "email": "clienta@email.com",
-      "dateCreation": "2025-12-11T10:00:00",
+      "dateCreation": "2025-12-11 10:00:00",
       "dateResolution": null
     },
     {
-      "id": 2,
+      "id": "2",
       "titre": "Problème matériel",
       "description": "Imprimante ne fonctionne pas",
       "categorie": "Matériel",
@@ -21,11 +21,11 @@
       "statut": "En cours",
       "nomClient": "Client B",
       "email": "clientb@email.com",
-      "dateCreation": "2025-12-10T14:30:00",
+      "dateCreation": "2025-12-10 14:30:00",
       "dateResolution": null
     },
     {
-      "id": 3,
+      "id": "3",
       "titre": "Problème compte",
       "description": "Impossible de se connecter au compte",
       "categorie": "Compte",
@@ -33,11 +33,11 @@
       "statut": "Nouveau",
       "nomClient": "Client C",
       "email": "clientc@email.com",
-      "dateCreation": "2025-12-09T09:15:00",
+      "dateCreation": "2025-12-09 09:15:00",
       "dateResolution": null
     },
     {
-      "id": 4,
+      "id": "4",
       "titre": "Facture incorrecte",
       "description": "Le montant de la facture ne correspond pas",
       "categorie": "Facturation",
@@ -45,11 +45,11 @@
       "statut": "En cours",
       "nomClient": "Client D",
       "email": "clientd@email.com",
-      "dateCreation": "2025-12-08T11:45:00",
+      "dateCreation": "2025-12-08 11:45:00",
       "dateResolution": null
     },
     {
-      "id": 5,
+      "id": "5",
       "titre": "Problème technique mineur",
       "description": "Petit bug logiciel sur l'application",
       "categorie": "Technique",
@@ -58,7 +58,7 @@
       "nomClient": "Client E",
       "email": "cliente@email.com",
       "dateCreation": "2025-12-07T16:20:00",
-      "dateResolution": "2025-12-08T10:00:00"
+      "dateResolution": "2025-12-08 10:00:00"
     }
   ]
 }
