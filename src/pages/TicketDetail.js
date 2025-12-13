@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import TicketItem from "../components/TicketItem";
+import { calculateHours } from "../utils/timeUtils"
 
 const TicketDetail = () => {
      const {id}= useParams()
@@ -12,14 +14,14 @@ const TicketDetail = () => {
     }, [id])
     if(!ticket){return null}
 
-    const dateCreation = new Date(ticket.dateCreation);
-    const diff = Math.floor((new Date() - dateCreation) / (1000 * 60 * 60));
-    const isLate = diff > 48;
+     const hours = calculateHours(ticket.dateCreation);
+     const isLate = hours>=48;
 
     
     return (             
         <div className="d-flex justify-content-center align-items-center ">
             <div className="row">
+                <TicketItem ticket={ticket} />
                 <div className="card p-2 mt-3 shadow-lg">
                     <h2 className="card-title  text-center">{ticket.titre}</h2>
                     <div className="card-body">
@@ -31,7 +33,7 @@ const TicketDetail = () => {
                         <p><strong>Statut :</strong> {ticket.statut}</p>
                         
                         <p><strong>Date de creation :</strong> {ticket.dateCreation.toLocaleString("fr-FR")}</p>
-                        <p><strong>Temps écoulé depuis creation :</strong> {diff} H</p>
+                    <p><strong>Temps écoulé depuis creation :</strong><span className="badge bg-info text-dark">{hours} H</span> </p>
                         <p><strong>Date de résolution :</strong> {ticket.dateResolution || "Non résolu"}</p>
                         <p><strong>Badge retard : </strong>{isLate ? "En retard ⚠️" : "OK ✅"}</p>
                         <Link to="/tickets">

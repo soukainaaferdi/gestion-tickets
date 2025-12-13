@@ -10,7 +10,9 @@
       "nomClient": "Client A",
       "email": "clienta@email.com",
       "dateCreation": "2025-12-11T10:00:00",
-      "dateResolution": null
+      "dateResolution": null,
+      "status": "résolu",
+      "resolvedAt": "2025-12-13T21:17:37.043Z"
     },
     {
       "id": "2",
@@ -59,6 +61,18 @@
       "email": "cliente@email.com",
       "dateCreation": "2025-12-07T16:20:00",
       "dateResolution": "2025-12-08T10:00:00"
+    },
+    {
+      "id": "82e6",
+      "nomClient": "dfghj",
+      "email": "aferdisoukaina8@gmail.com",
+      "titre": "rtyui",
+      "description": "tyuio",
+      "categorie": "Matériel",
+      "priorite": "Haute",
+      "statut": "Nouveau",
+      "dateCreation": "13/12/2025 22:19:44",
+      "dateResolution": null
     }
   ]
 }
