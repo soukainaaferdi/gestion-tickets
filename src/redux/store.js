@@ -1,6 +1,6 @@
-// src/redux/store.js
+
 import { configureStore } from "@reduxjs/toolkit";
-import { resolveTicket } from "./ticketsSlice"; // تأكدي المسار صحيح
+import { resolveTicket } from "./ticketsSlice"; 
 
 export const store = configureStore({
   reducer: {

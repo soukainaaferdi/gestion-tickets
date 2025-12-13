@@ -1,4 +1,4 @@
-// components/TicketItem.js
+
 import { calculateHours } from "../utils/timeUtils";
 import { useDispatch } from "react-redux";
 import {resolveTicket}from"../redux/ticketsSlice";
