@@ -1,3 +1,56 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+
+const TicketDetail = () => {
+     const {id}= useParams()
+     const [ticket, setTicket] = useState(null)
+    useEffect(()=>{
+        axios.get(`http://localhost:5000/tickets/${id}`)
+        .then(res => setTicket(res.data))
+        .catch(console.error)
+    }, [id])
+    if(!ticket){return null}
+
+    const dateCreation = new Date(ticket.dateCreation);
+    const diff = Math.floor((new Date() - dateCreation) / (1000 * 60 * 60));
+    const isLate = diff > 48;
+
+    
+    return (             
+        <div className="d-flex justify-content-center align-items-center ">
+            <div className="row">
+                <div className="card p-2 mt-3 shadow-lg">
+                    <h2 className="card-title  text-center">{ticket.titre}</h2>
+                    <div className="card-body">
+                        <p className="card-text">{ticket.description}</p>
+                        <p><strong>Nom :</strong> {ticket.nomClient}</p>
+                        <p><strong>Email :</strong> {ticket.email}</p>
+                        <p><strong>Catégorie :</strong> {ticket.categorie}</p>
+                        <p><strong>Priorite :</strong> {ticket.priorite}</p>
+                        <p><strong>Statut :</strong> {ticket.statut}</p>
+                        
+                        <p><strong>Date de creation :</strong> {ticket.dateCreation.toLocaleString("fr-FR")}</p>
+                        <p><strong>Temps écoulé depuis creation :</strong> {diff} H</p>
+                        <p><strong>Date de résolution :</strong> {ticket.dateResolution || "Non résolu"}</p>
+                        <p><strong>Badge retard : </strong>{isLate ? "En retard ⚠️" : "OK ✅"}</p>
+                        <Link to="/tickets">
+                            <button className="btn btn-warning">Retour</button>
+                        </Link>
+                        <Link to={`/tickets/modifier/${ticket.id}`}>
+                            <button className="btn btn-primary mx-2">Modifier</button>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+     );
+}
+ 
+export default TicketDetail;
+
+
 /*
 import { useParams } from "react-router-dom";
 

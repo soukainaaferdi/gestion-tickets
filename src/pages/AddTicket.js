@@ -11,7 +11,7 @@ const AddTicket = () => {
         categorie:"",
         priorite:"",
         statut:"Nouveau",
-        dateCreation : new Date().toISOString() ,
+        dateCreation : new Date().toLocaleString("fr-FR") ,
         dateResolution: null
     })
     const handleChange=(e)=>{
@@ -71,3 +71,4 @@ const AddTicket = () => {
 }
  
 export default AddTicket;
+

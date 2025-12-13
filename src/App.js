@@ -10,9 +10,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/test" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/" element={<TicketsList />} />
+        <Route path="/tickets" element={<TicketsList />} />
         <Route path="/tickets/:id" element={<TicketDetail />} />
         <Route path="/tickets/ajouter" element={<AddTicket />} />
         <Route path="/tickets/modifier/:id" element={<EditTicket />} />
