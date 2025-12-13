@@ -12,10 +12,6 @@ const TicketDetail = () => {
     }, [id])
     if(!ticket){return null}
 
-    const dateCreation = new Date(ticket.dateCreation);
-    const diff = Math.floor((new Date() - dateCreation) / (1000 * 60 * 60));
-    const isLate = diff > 48;
-
     
     return (             
         <div className="d-flex justify-content-center align-items-center ">
@@ -31,9 +27,9 @@ const TicketDetail = () => {
                         <p><strong>Statut :</strong> {ticket.statut}</p>
                         
                         <p><strong>Date de creation :</strong> {ticket.dateCreation.toLocaleString("fr-FR")}</p>
-                        <p><strong>Temps écoulé depuis creation :</strong> {diff} H</p>
-                        <p><strong>Date de résolution :</strong> {ticket.dateResolution || "Non résolu"}</p>
-                        <p><strong>Badge retard : </strong>{isLate ? "En retard ⚠️" : "OK ✅"}</p>
+                        <p><strong>Temps écoulé depuis creation :</strong> {} H</p>
+                        <p><strong>Date de résolution :</strong> {}</p>
+                        <p><strong>Badge retard : </strong>{}</p>
                         <Link to="/tickets">
                             <button className="btn btn-warning">Retour</button>
                         </Link>
