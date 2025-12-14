@@ -6,11 +6,13 @@
       "description": "Imprimante ne fonctionne pas",
       "categorie": "Matériel",
       "priorite": "Moyenne",
-      "statut": "En cours",
+      "statut": "Résolu",
       "nomClient": "Client B",
       "email": "clientb@email.com",
       "dateCreation": "2025-12-10T14:30:00",
-      "dateResolution": null
+      "dateResolution": null,
+      "status": "résolu",
+      "resolvedAt": "2025-12-14T11:24:42.226Z"
     },
     {
       "id": "3",

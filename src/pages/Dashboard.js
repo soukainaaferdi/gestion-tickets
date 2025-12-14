@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const [tickets, setTickets] = useState([]);
@@ -46,7 +47,12 @@ const Dashboard = () => {
 
   return (
     <div className="container mt-4">
-      <h2 className="mb-4">Dashboard</h2>
+      <div className="d-flex justify-content-between">
+        <h2 className="mb-4">Dashboard</h2>
+        <Link to="/">
+        <button className="btn btn-warning mb-3">Retour</button>
+        </Link>
+      </div>
 
       <div className="row text-center">
         <div className="col-md-3 mb-3">
