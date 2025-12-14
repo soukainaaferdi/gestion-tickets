@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
+
 const TicketDetail = () => {
      const {id}= useParams()
      const [ticket, setTicket] = useState(null)
@@ -11,7 +12,6 @@ const TicketDetail = () => {
         .catch(console.error)
     }, [id])
     if(!ticket){return null}
-
     
     return (             
         <div className="d-flex justify-content-center align-items-center ">
