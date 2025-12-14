@@ -5,7 +5,7 @@ import { resolveTicket } from "../redux/ticketsSlice";
 const TicketItem = ({ ticket }) => {
   const dispatch = useDispatch();
   const hours = calculateHours(ticket.dateCreation);
-  const isLate = hours >= 48 && ticket.statut !== "résolu";
+  const isLate = hours >= 48 && ticket.statut !== "Résolu";
 
 
   const handleResolve = () => {
@@ -21,13 +21,16 @@ const TicketItem = ({ ticket }) => {
         {isLate ? "En retard (48h+)" : `${hours}h`}
       </span>
 
+       {/* Bouton Marquer résolu يظهر فقط إذا ticket غير محلول */}
+      {ticket.statut !== "Résolu" && (
+        <button 
+          className="btn btn-success btn-sm mt-2"
+          onClick={handleResolve}
+        >
+          Marquer résolu
+        </button>
+      )}
      
-      <button 
-        className="btn btn-success btn-sm mt-2"
-        onClick={handleResolve}
-      >
-        Marquer résolu
-      </button>
     </div>
   );
 };
