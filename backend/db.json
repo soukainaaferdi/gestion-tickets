@@ -1,27 +1,15 @@
 {
   "tickets": [
     {
-      "id": "1",
-      "titre": "Problème technique",
-      "description": "Impossible de se connecter au VPN",
-      "categorie": "Technique",
-      "priorite": "Haute",
-      "statut": "Nouveau",
-      "nomClient": "Client A",
-      "email": "clienta@email.com",
-      "dateCreation": "2025-12-11 10:00:00",
-      "dateResolution": null
-    },
-    {
       "id": "2",
       "titre": "Problème matériel",
       "description": "Imprimante ne fonctionne pas",
       "categorie": "Matériel",
       "priorite": "Moyenne",
-      "statut": "Résolu",
+      "statut": "En cours",
       "nomClient": "Client B",
       "email": "clientb@email.com",
-      "dateCreation": "2025-12-10 14:30:00",
+      "dateCreation": "2025-12-10T14:30:00",
       "dateResolution": null
     },
     {
@@ -33,7 +21,7 @@
       "statut": "Nouveau",
       "nomClient": "Client C",
       "email": "clientc@email.com",
-      "dateCreation": "2025-12-09 09:15:00",
+      "dateCreation": "2025-12-09T09:15:00",
       "dateResolution": null
     },
     {
@@ -45,7 +33,7 @@
       "statut": "En cours",
       "nomClient": "Client D",
       "email": "clientd@email.com",
-      "dateCreation": "2025-12-08 11:45:00",
+      "dateCreation": "2025-12-08T11:45:00",
       "dateResolution": null
     },
     {
@@ -58,18 +46,18 @@
       "nomClient": "Client E",
       "email": "cliente@email.com",
       "dateCreation": "2025-12-07T16:20:00",
-      "dateResolution": "2025-12-08 10:00:00"
+      "dateResolution": "2025-12-08T10:00:00"
     },
     {
-      "id": "2652",
-      "nomClient": "douaa",
-      "email": "douaa@gmail.com",
-      "titre": "probleme",
-      "description": "test",
+      "id": "f9d3",
+      "nomClient": "cline",
+      "email": "cline@gmail.com",
+      "titre": "hello",
+      "description": "ghjk",
       "categorie": "Matériel",
-      "priorite": "Urgente",
+      "priorite": "Moyenne",
       "statut": "Nouveau",
-      "dateCreation": "13/12/2025 20:10:52",
+      "dateCreation": "13/12/2025 23:49:02",
       "dateResolution": null
     }
   ]

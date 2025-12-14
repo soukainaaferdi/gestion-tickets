@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import TicketItem from "../components/TicketItem";
+import { calculateHours } from "../utils/timeUtils"
 
 
 const TicketDetail = () => {
@@ -12,10 +14,15 @@ const TicketDetail = () => {
         .catch(console.error)
     }, [id])
     if(!ticket){return null}
+
+     const hours = calculateHours(ticket.dateCreation);
+     const isLate = hours>=48;
+
     
     return (             
         <div className="d-flex justify-content-center align-items-center ">
             <div className="row">
+                <TicketItem ticket={ticket} />
                 <div className="card p-2 mt-3 shadow-lg">
                     <h2 className="card-title  text-center">{ticket.titre}</h2>
                     <div className="card-body">
@@ -27,9 +34,9 @@ const TicketDetail = () => {
                         <p><strong>Statut :</strong> {ticket.statut}</p>
                         
                         <p><strong>Date de creation :</strong> {ticket.dateCreation.toLocaleString("fr-FR")}</p>
-                        <p><strong>Temps écoulé depuis creation :</strong> {} H</p>
-                        <p><strong>Date de résolution :</strong> {}</p>
-                        <p><strong>Badge retard : </strong>{}</p>
+                    <p><strong>Temps écoulé depuis creation :</strong><span className="badge bg-info text-dark">{hours} H</span> </p>
+                        <p><strong>Date de résolution :</strong> {ticket.dateResolution || "Non résolu"}</p>
+                        <p><strong>Badge retard : </strong>{isLate ? <span className="text-danger">"En retard "</span>: "OK "}</p>
                         <Link to="/tickets">
                             <button className="btn btn-warning">Retour</button>
                         </Link>
@@ -72,7 +79,7 @@ const TicketDetail = () => {
                     <Link to="/detail">
                     <button className="btn btn-primary mx-2">Détail</button>
                     </Link>
-                    <Link to={`/update/${ticket.id}`}>
+                    <Link to={/update/${ticket.id}}>
                     <button className="btn btn-secondary">Modifier</button>
                     </Link>
                 </div>
