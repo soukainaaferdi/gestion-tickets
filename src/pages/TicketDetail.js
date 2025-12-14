@@ -33,10 +33,10 @@ const TicketDetail = () => {
                         <p><strong>Priorite :</strong> {ticket.priorite}</p>
                         <p><strong>Statut :</strong> {ticket.statut}</p>
                         
-                        <p><strong>Date de creation :</strong> {ticket.dateCreation.toLocaleString("fr-FR")}</p>
+                        <p><strong>Date de creation :</strong> {new Date(ticket.dateCreation).toLocaleString("fr-FR")}</p>
                     <p><strong>Temps écoulé depuis creation :</strong><span className="badge bg-info text-dark">{hours} H</span> </p>
                         <p><strong>Date de résolution :</strong> {ticket.dateResolution || "Non résolu"}</p>
-                        <p><strong>Badge retard : </strong>{isLate ? <span className="text-danger">"En retard "</span>: "OK "}</p>
+                        <p><strong>Badge retard : </strong>{isLate ? <strong className="text-danger">En retard </strong>: "OK "}</p>
                         <Link to="/tickets">
                             <button className="btn btn-warning">Retour</button>
                         </Link>

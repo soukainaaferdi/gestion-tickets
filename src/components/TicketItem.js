@@ -6,7 +6,8 @@ import {resolveTicket}from"../redux/ticketsSlice";
 const TicketItem = ({ ticket }) => {
   const dispatch = useDispatch();
   const hours = calculateHours(ticket.dateCreation);
-  const isLate = hours >= 48 && ticket.status !== "résolu";
+  const isLate = hours >= 48 && ticket.statu !== "résolu";
+
 
   const handleResolve = () => {
     dispatch(resolveTicket(ticket));
@@ -16,9 +17,9 @@ const TicketItem = ({ ticket }) => {
     <div className="card p-3 mb-2 shadow-sm">
       <h5>{ticket.title}</h5>
 
-      <span className={`badge ${isLate ? "bg-danger" : "bg-secondary"}`}>
+      <button className={`btn text-white ${isLate ? "bg-danger" : "bg-secondary"}`}>
         {isLate ? "En retard (48h+)" : `${hours}h`}
-      </span>
+      </button>
 
       <button className="btn btn-success mt-2" onClick={handleResolve}>
         Marquer résolu
