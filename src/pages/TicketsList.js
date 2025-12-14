@@ -31,6 +31,9 @@ const TicketsList = () => {
             <Link to="/tickets/ajouter">
             <button className="btn btn-success m-3">Ajouter +</button>
             </Link>
+            <Link to="/">
+            <button className="btn btn-warning my-3">Retour</button>
+            </Link>
         </div>
             <div className=" d-flex justify-content-center align-item-center">
                 <table className="table ">
