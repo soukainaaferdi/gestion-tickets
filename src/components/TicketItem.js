@@ -17,9 +17,9 @@ const TicketItem = ({ ticket }) => {
       <h5 className="card-title text-center">{ticket.titre}</h5>
 
      
-      <span className={`badge ${isLate ? "bg-danger" : "bg-secondary"} fs-6`}>
+      <strong className={`badge ${isLate ? "bg-danger" : "bg-secondary"} fs-6`}>
         {isLate ? "En retard (48h+)" : `${hours}h`}
-      </span>
+      </strong>
 
        {/* Bouton Marquer résolu يظهر فقط إذا ticket غير محلول */}
       {ticket.statut !== "Résolu" && (

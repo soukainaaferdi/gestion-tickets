@@ -9,9 +9,8 @@
       "statut": "Résolu",
       "nomClient": "Client B",
       "email": "clientb@email.com",
-      "dateCreation": "2025-12-10 14:30:00",
-      "dateResolution": null,
-      "resolvedAt": "2025-12-14T20:58:19.801Z"
+      "dateCreation": "2025-12-10T14:30:00.000Z",
+      "dateResolution": "2025-12-14T21:48:56.702Z"
     },
     {
       "id": "3",
@@ -22,9 +21,8 @@
       "statut": "Résolu",
       "nomClient": "Client C",
       "email": "clientc@email.com",
-      "dateCreation": "2025-12-09 09:15:00",
-      "dateResolution": null,
-      "resolvedAt": "2025-12-14T21:08:22.721Z"
+      "dateCreation": "2025-12-09T09:15:00.000Z",
+      "dateResolution": "2025-12-14T21:08:22.721Z"
     },
     {
       "id": "4",
@@ -35,9 +33,8 @@
       "statut": "Résolu",
       "nomClient": "Client D",
       "email": "clientd@email.com",
-      "dateCreation": "2025-12-08 11:45:00",
-      "dateResolution": null,
-      "resolvedAt": "2025-12-14T21:08:42.229Z"
+      "dateCreation": "2025-12-08T11:45:00.000Z",
+      "dateResolution": "2025-12-14T21:08:42.229Z"
     },
     {
       "id": "5",
@@ -48,9 +45,8 @@
       "statut": "Résolu",
       "nomClient": "Client E",
       "email": "cliente@email.com",
-      "dateCreation": "2025-12-07 16:20:00",
-      "dateResolution": "2025-12-08T10:00:00",
-      "resolvedAt": "2025-12-08T10:00:00"
+      "dateCreation": "2025-12-07T16:20:00.000Z",
+      "dateResolution": "2025-12-08T10:00:00.000Z"
     },
     {
       "id": "f9d3",
@@ -61,9 +57,8 @@
       "categorie": "Matériel",
       "priorite": "Moyenne",
       "statut": "Résolu",
-      "dateCreation": "2025-12-13 23:49:02",
-      "dateResolution": null,
-      "resolvedAt": "2025-12-14T21:04:13.496Z"
+      "dateCreation": "2025-12-13T23:49:02.000Z",
+      "dateResolution": "2025-12-14T21:04:13.496Z"
     },
     {
       "id": "64a1",
@@ -74,9 +69,8 @@
       "categorie": "Compte",
       "priorite": "Moyenne",
       "statut": "Résolu",
-      "dateCreation": "14/12/2025 14:50:05",
-      "dateResolution": null,
-      "resolvedAt": "2025-12-14T21:04:08.041Z"
+      "dateCreation": "2025-12-14T14:50:05.000Z",
+      "dateResolution": "2025-12-14T21:04:08.041Z"
     },
     {
       "id": "1371",
@@ -87,9 +81,32 @@
       "categorie": "Matériel",
       "priorite": "Moyenne",
       "statut": "Résolu",
-      "dateCreation": "14/12/2025 22:09:40",
-      "dateResolution": null,
-      "resolvedAt": "2025-12-14T21:10:23.603Z"
+      "dateCreation": "2025-12-14T22:09:40.000Z",
+      "dateResolution": "2025-12-14T21:10:23.603Z"
+    },
+    {
+      "id": "8932",
+      "nomClient": "cline h",
+      "email": "aferdisoukaina8@gmail.com",
+      "titre": "rtyuhj",
+      "description": "drtfgyijh",
+      "categorie": "Matériel",
+      "priorite": "Moyenne",
+      "statut": "Résolu",
+      "dateCreation": "2025-12-14T22:24:32.000Z",
+      "dateResolution": "2025-12-14T21:42:47.869Z"
+    },
+    {
+      "id": "2b05",
+      "nomClient": "clin g",
+      "email": "cline@gmail.com",
+      "titre": "ed5tf67uio",
+      "description": "e5rc6tv7buino",
+      "categorie": "Matériel",
+      "priorite": "Haute",
+      "statut": "Résolu",
+      "dateCreation": "2025-12-14T21:39:45.036Z",
+      "dateResolution": "2025-12-14T21:41:14.587Z"
     }
   ]
 }
