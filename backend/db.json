@@ -24,7 +24,9 @@
       "nomClient": "Client C",
       "email": "clientc@email.com",
       "dateCreation": "2025-12-09 09:15:00",
-      "dateResolution": null
+      "dateResolution": null,
+      "status": "résolu",
+      "resolvedAt": "2025-12-13T23:18:12.647Z"
     },
     {
       "id": "4",
@@ -36,7 +38,9 @@
       "nomClient": "Client D",
       "email": "clientd@email.com",
       "dateCreation": "2025-12-08 11:45:00",
-      "dateResolution": null
+      "dateResolution": null,
+      "status": "résolu",
+      "resolvedAt": "2025-12-14T12:42:16.797Z"
     },
     {
       "id": "5",
@@ -48,7 +52,9 @@
       "nomClient": "Client E",
       "email": "cliente@email.com",
       "dateCreation": "2025-12-07 16:20:00",
-      "dateResolution": "2025-12-08T10:00:00"
+      "dateResolution": "2025-12-08T10:00:00",
+      "status": "résolu",
+      "resolvedAt": "2025-12-08T10:00:00"
     },
     {
       "id": "f9d3",
@@ -59,7 +65,7 @@
       "categorie": "Matériel",
       "priorite": "Moyenne",
       "statut": "Nouveau",
-      "dateCreation": "13/12/2025 23:49:02",
+      "dateCreation": "2025-12-13 23:49:02",
       "dateResolution": null
     },
     {
@@ -71,7 +77,19 @@
       "categorie": "Compte",
       "priorite": "Basse",
       "statut": "Nouveau",
-      "dateCreation": "14/12/2025 12:53:35",
+      "dateCreation": "2025-12-14 12:53:35",
+      "dateResolution": null
+    },
+    {
+      "id": "7502",
+      "nomClient": "cline",
+      "email": "cline@gmail.com",
+      "titre": "hhd",
+      "description": "we2e",
+      "categorie": "Compte",
+      "priorite": "Haute",
+      "statut": "Nouveau",
+      "dateCreation": "2025-12-14 14:03:51",
       "dateResolution": null
     }
   ]
