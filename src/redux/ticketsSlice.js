@@ -27,13 +27,7 @@ export const resolveTicket = createAsyncThunk(
   }
 );*/
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  getTickets,
-  getTicketById,
-  createTicket,
-  updateTicket,
-  deleteTicket,
-} from "../api/ticketsApi";
+import {getTickets,getTicketById,createTicket,updateTicket,deleteTicket,} from "../api/ticketsApi";
 
 const ticketsSlice = createSlice({
   name: "tickets",
@@ -65,10 +59,6 @@ export const {
   setLoading,
   setError,
 } = ticketsSlice.actions;
-
-// ===== Action Creators بالـ then/catch =====
-
-// جلب جميع التذاكر
 export const fetchTickets = () => (dispatch) => {
   dispatch(setLoading(true));
   getTickets()
@@ -83,7 +73,6 @@ export const fetchTickets = () => (dispatch) => {
     });
 };
 
-// جلب تذكرة واحدة
 export const fetchTicketById = (id) => (dispatch) => {
   dispatch(setLoading(true));
   getTicketById(id)
@@ -96,13 +85,11 @@ export const fetchTicketById = (id) => (dispatch) => {
       dispatch(setLoading(false));
     });
 };
-
-// إضافة تذكرة جديدة
 export const addTicket = (ticket) => (dispatch) => {
   dispatch(setLoading(true));
   createTicket(ticket)
     .then((res) => {
-      dispatch(fetchTickets()); // بعد الإضافة نجلب جميع التذاكر
+      dispatch(fetchTickets()); 
       dispatch(setLoading(false));
     })
     .catch((err) => {
@@ -110,8 +97,6 @@ export const addTicket = (ticket) => (dispatch) => {
       dispatch(setLoading(false));
     });
 };
-
-// تعديل تذكرة
 export const editTicket = (id, ticket) => (dispatch) => {
   dispatch(setLoading(true));
   updateTicket(id, ticket)
@@ -124,8 +109,6 @@ export const editTicket = (id, ticket) => (dispatch) => {
       dispatch(setLoading(false));
     });
 };
-
-// حذف تذكرة
 export const removeTicket = (id) => (dispatch) => {
   dispatch(setLoading(true));
   deleteTicket(id)

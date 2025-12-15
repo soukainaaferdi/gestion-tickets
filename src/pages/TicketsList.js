@@ -1,10 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
-
 const TicketsList = () => {
-    
     const [tickets, setTickets] = useState([])
         useEffect(
         ()=>{ axios.get('http://localhost:5000/tickets')
