@@ -20,7 +20,7 @@ const EditTicket = () => {
             ...ticket, [e.target.name] : e.target.value
         })
     }
-
+     
     useEffect(()=>{
         axios.get(`http://localhost:5000/tickets/${id}`)
         .then(res =>
@@ -31,6 +31,9 @@ const EditTicket = () => {
     
     const handleSubmit=(e)=>{
         e.preventDefault();
+         if(ticket.statut === "Résolu" && !ticket.dateResolution){
+    ticket.dateResolution = new Date().toISOString();
+}
 
         axios.put(`http://localhost:5000/tickets/${id}`, ticket)
         .then(()=>{
@@ -40,7 +43,8 @@ const EditTicket = () => {
     }
     return (  
         <div className="container">
-            <h1 className="m-3 mb-4">Ajouter un nouveau ticket</h1>
+            <h1 className="m-3 mb-4">Modifier le ticket</h1>
+
             <form onSubmit={handleSubmit}>
             <input type="text" placeholder="Nom" className="form-control m-2" name="nomClient" onChange={handleChange}/>
             <input type="email" placeholder="Email" className="form-control m-2" name="email" onChange={handleChange}/>

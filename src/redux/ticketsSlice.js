@@ -73,7 +73,8 @@ export const fetchTickets = () => (dispatch) => {
   dispatch(setLoading(true));
   getTickets()
     .then((res) => {
-      dispatch(setTickets(res.data.tickets));
+      dispatch(setTickets(res.data));
+;
       dispatch(setLoading(false));
     })
     .catch((err) => {
