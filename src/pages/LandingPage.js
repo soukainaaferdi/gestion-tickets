@@ -3,9 +3,9 @@ import "./style.css"
 
 const LandingPage = () => {
   return (
-  <div class="container mt-5">
+  <div className="container mt-5">
 
-    <div class="hero">
+    <div className="hero">
       <h1>Gestion de Tickets Support</h1>
       <p>DigiServices, une entreprise IT de Casablanca avec 200 employés, reçoit quotidiennement des demandes d'assistance. Mme Amina a besoin d'un système centralisé pour gérer les tickets et mesurer les temps de résolution.</p>
       <div className="mt-5">
@@ -15,33 +15,33 @@ const LandingPage = () => {
       </div>
     </div>
 
-    <div class="features mb-5">
-      <h2 class="section-title">Fonctionnalités principales</h2>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Créer/modifier/supprimer un ticket</li>
-        <li class="list-group-item">Champs : titre, description, catégorie, priorité, statut, nom client, email</li>
-        <li class="list-group-item">Catégories : Technique, Matériel, Compte, Facturation</li>
-        <li class="list-group-item">Priorités : Basse, Moyenne, Haute, Urgente</li>
-        <li class="list-group-item">Statuts : Nouveau, En cours, Résolu, Fermé</li>
-        <li class="list-group-item">Suivi automatique : temps écoulé, badge rouge (>48h), date de résolution</li>
-        <li class="list-group-item">Statistiques : tickets ouverts, tickets en retard, temps moyen, taux de résolution</li>
+    <div className="features mb-5">
+      <h2 className="section-title">Fonctionnalités principales</h2>
+      <ul className="list-group list-group-flush">
+        <li className="list-group-item">Créer/modifier/supprimer un ticket</li>
+        <li className="list-group-item">Champs : titre, description, catégorie, priorité, statut, nom client, email</li>
+        <li className="list-group-item">Catégories : Technique, Matériel, Compte, Facturation</li>
+        <li className="list-group-item">Priorités : Basse, Moyenne, Haute, Urgente</li>
+        <li className="list-group-item">Statuts : Nouveau, En cours, Résolu, Fermé</li>
+        <li className="list-group-item">Suivi automatique : temps écoulé, badge rouge (48h), date de résolution</li>
+        <li className="list-group-item">Statistiques : tickets ouverts, tickets en retard, temps moyen, taux de résolution</li>
       </ul>
     </div>
 
-    <div class="team mb-5">
-      <h2 class="section-title">Membres de l'équipe</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-3 mb-4">
-          <div class="card text-center p-3">
-            <div class="card-body">
-              <h5 class="card-title">Soukaina Aferdi</h5>
+    <div className="team mb-5">
+      <h2 className="section-title">Membres de l'équipe</h2>
+      <div className="row justify-content-center">
+        <div className="col-md-3 mb-4">
+          <div className="card text-center p-3">
+            <div className="card-body">
+              <h5 className="card-title">Soukaina Aferdi</h5>
             </div>
           </div>
         </div>
-        <div class="col-md-3 mb-4">
-          <div class="card text-center p-3">
-            <div class="card-body">
-              <h5 class="card-title">Douaa Abkour</h5>
+        <div className="col-md-3 mb-4">
+          <div className="card text-center p-3">
+            <div className="card-body">
+              <h5 className="card-title">Douaa Abkour</h5>
               
             </div>
           </div>

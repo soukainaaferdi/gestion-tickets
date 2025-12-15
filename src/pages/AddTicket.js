@@ -11,7 +11,7 @@ const AddTicket = () => {
         categorie:"",
         priorite:"",
         statut:"Nouveau",
-        dateCreation : new Date().toLocaleString("fr-FR") ,
+        dateCreation: new Date().toISOString(),/* dateCreation : new Date().toLocaleString("fr-FR")*/ 
         dateResolution: null
     })
     const handleChange=(e)=>{

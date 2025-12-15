@@ -16,7 +16,8 @@ const TicketDetail = () => {
     if(!ticket){return null}
 
      const hours = calculateHours(ticket.dateCreation);
-     const isLate = hours>=48;
+     const isLate = hours >= 48 && ticket.statut !== "Résolu" && ticket.statut !== "Fermé";
+;
 
     
     return (             

@@ -1,12 +1,11 @@
-
 import { calculateHours } from "../utils/timeUtils";
 import { useDispatch } from "react-redux";
-import {resolveTicket}from"../redux/ticketsSlice";
+import { resolveTicket } from "../redux/ticketsSlice";
 
 const TicketItem = ({ ticket }) => {
   const dispatch = useDispatch();
   const hours = calculateHours(ticket.dateCreation);
-  const isLate = hours >= 48 && ticket.statu !== "résolu";
+  const isLate = hours >= 48 && ticket.statut !== "Résolu";
 
 
   const handleResolve = () => {
@@ -14,16 +13,24 @@ const TicketItem = ({ ticket }) => {
   };
 
   return (
-    <div className="card p-3 mb-2 shadow-sm">
-      <h5>{ticket.title}</h5>
+    <div className="card p-3 mb-3 shadow-sm">
+      <h5 className="card-title text-center">{ticket.titre}</h5>
 
-      <button className={`btn text-white ${isLate ? "bg-danger" : "bg-secondary"}`}>
+     
+      <strong className={`badge ${isLate ? "bg-danger" : "bg-secondary"} fs-6`}>
         {isLate ? "En retard (48h+)" : `${hours}h`}
-      </button>
+      </strong>
 
-      <button className="btn btn-success mt-2" onClick={handleResolve}>
-        Marquer résolu
-      </button>
+       {/* Bouton Marquer résolu يظهر فقط إذا ticket غير محلول */}
+      {ticket.statut !== "Résolu" && (
+        <button 
+          className="btn btn-success btn-sm mt-2"
+          onClick={handleResolve}
+        >
+          Marquer résolu
+        </button>
+      )}
+     
     </div>
   );
 };

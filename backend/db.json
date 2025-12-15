@@ -9,10 +9,8 @@
       "statut": "Résolu",
       "nomClient": "Client B",
       "email": "clientb@email.com",
-      "dateCreation": "2025-12-10 14:30:00",
-      "dateResolution": null,
-      "status": "résolu",
-      "resolvedAt": "2025-12-14T21:19:28.740Z"
+      "dateCreation": "2025-12-10T14:30:00.000Z",
+      "dateResolution": "2025-12-14T21:48:56.702Z"
     },
     {
       "id": "3",
@@ -23,8 +21,8 @@
       "statut": "Résolu",
       "nomClient": "Client C",
       "email": "clientc@email.com",
-      "dateCreation": "2025-12-09 09:15:00",
-      "dateResolution": null
+      "dateCreation": "2025-12-09T09:15:00.000Z",
+      "dateResolution": "2025-12-14T21:08:22.721Z"
     },
     {
       "id": "4",
@@ -32,11 +30,11 @@
       "description": "Le montant de la facture ne correspond pas",
       "categorie": "Facturation",
       "priorite": "Urgente",
-      "statut": "En cours",
+      "statut": "Résolu",
       "nomClient": "Client D",
       "email": "clientd@email.com",
-      "dateCreation": "2025-12-08 11:45:00",
-      "dateResolution": null
+      "dateCreation": "2025-12-08T11:45:00.000Z",
+      "dateResolution": "2025-12-14T21:08:42.229Z"
     },
     {
       "id": "5",
@@ -47,36 +45,68 @@
       "statut": "Résolu",
       "nomClient": "Client E",
       "email": "cliente@email.com",
-      "dateCreation": "2025-12-07 16:20:00",
-      "dateResolution": "2025-12-08T10:00:00",
-      "status": "résolu",
-      "resolvedAt": "2025-12-14T21:33:44.720Z"
+      "dateCreation": "2025-12-07T16:20:00.000Z",
+      "dateResolution": "2025-12-08T10:00:00.000Z"
     },
     {
-      "id": "bb22",
-      "nomClient": "douaa",
-      "email": "douaa@gmail.com",
-      "titre": "test test",
-      "description": "test test test",
-      "categorie": "Compte",
-      "priorite": "Basse",
-      "statut": "Nouveau",
-      "dateCreation": "14/12/2025 12:53:35",
-      "dateResolution": null,
-      "status": "résolu",
-      "resolvedAt": "2025-12-14T21:33:06.047Z"
-    },
-    {
-      "id": "a3cc",
-      "nomClient": "douaa",
-      "email": "abkour@gmail.com",
-      "titre": "aaaa",
-      "description": "a",
-      "categorie": "Technique",
+      "id": "f9d3",
+      "nomClient": "cline",
+      "email": "cline@gmail.com",
+      "titre": "hello",
+      "description": "ghjk",
+      "categorie": "Matériel",
       "priorite": "Moyenne",
       "statut": "Résolu",
-      "dateCreation": "14/12/2025 22:37:08",
-      "dateResolution": null
+      "dateCreation": "2025-12-13T23:49:02.000Z",
+      "dateResolution": "2025-12-14T21:04:13.496Z"
+    },
+    {
+      "id": "64a1",
+      "nomClient": "dfghj",
+      "email": "aferdisoukaina8@gmail.com",
+      "titre": "sedtruio",
+      "description": "cr6tvyupbijn",
+      "categorie": "Compte",
+      "priorite": "Moyenne",
+      "statut": "Résolu",
+      "dateCreation": "2025-12-14T14:50:05.000Z",
+      "dateResolution": "2025-12-14T21:04:08.041Z"
+    },
+    {
+      "id": "1371",
+      "nomClient": "cline h",
+      "email": "aferdisoukaina8@gmail.com",
+      "titre": "html",
+      "description": "drgvybuhjnio",
+      "categorie": "Matériel",
+      "priorite": "Moyenne",
+      "statut": "Résolu",
+      "dateCreation": "2025-12-14T22:09:40.000Z",
+      "dateResolution": "2025-12-14T21:10:23.603Z"
+    },
+    {
+      "id": "8932",
+      "nomClient": "cline h",
+      "email": "aferdisoukaina8@gmail.com",
+      "titre": "rtyuhj",
+      "description": "drtfgyijh",
+      "categorie": "Matériel",
+      "priorite": "Moyenne",
+      "statut": "Résolu",
+      "dateCreation": "2025-12-14T22:24:32.000Z",
+      "dateResolution": "2025-12-14T21:42:47.869Z"
+    },
+    {
+      "id": "2b05",
+      "nomClient": "clin g",
+      "email": "cline@gmail.com",
+      "titre": "ed5tf67uio",
+      "description": "e5rc6tv7buino",
+      "categorie": "Matériel",
+      "priorite": "Haute",
+      "statut": "Résolu",
+      "dateCreation": "2025-12-14T21:39:45.036Z",
+      "dateResolution": "2025-12-14T21:41:14.587Z"
     }
   ]
 }
