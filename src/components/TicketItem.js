@@ -1,6 +1,7 @@
 import { calculateHours } from "../utils/timeUtils";
 import { useDispatch } from "react-redux";
-import { resolveTicket } from "../redux/ticketsSlice";
+import { editTicket } from "../redux/ticketsSlice";
+;
 
 const TicketItem = ({ ticket }) => {
   const dispatch = useDispatch();
@@ -8,9 +9,14 @@ const TicketItem = ({ ticket }) => {
   const isLate = hours >= 48 && ticket.statut !== "Résolu";
 
 
-  const handleResolve = () => {
-    dispatch(resolveTicket(ticket));
-  };
+ const handleResolve = () => {
+  dispatch(editTicket(ticket.id, {
+    ...ticket,
+    statut: "Résolu",
+    dateResolution: new Date().toISOString()
+  }));
+};
+
 
   return (
     <div className="card p-3 mb-3 shadow-sm">
