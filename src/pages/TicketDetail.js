@@ -36,8 +36,8 @@ const TicketDetail = () => {
                         
                         <p><strong>Date de creation :</strong> {new Date(ticket.dateCreation).toLocaleString("fr-FR")}</p>
                     <p><strong>Temps écoulé depuis creation :</strong><span className="badge bg-info text-dark">{hours} H</span> </p>
-                        <p><strong>Date de résolution :</strong> {ticket.dateResolution || "Non résolu"}</p>
-                        <p><strong>Badge retard : </strong>{isLate ? <strong className="text-danger">En retard </strong>: "OK "}</p>
+                      <p><strong>Date de résolution :</strong> {ticket.dateResolution ? new Date(ticket.dateResolution).toLocaleString("fr-FR") : "Non résolu"}</p>
+                        <p><strong>Badge retard : </strong>{isLate ? <span className="text-danger">"En retard "</span>: "OK "}</p>
                         <Link to="/tickets">
                             <button className="btn btn-warning">Retour</button>
                         </Link>

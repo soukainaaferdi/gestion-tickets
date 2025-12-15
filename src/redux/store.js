@@ -1,10 +1,8 @@
-
 import { configureStore } from "@reduxjs/toolkit";
-import { resolveTicket } from "./ticketsSlice"; 
+import ticketsReducer from "./ticketsSlice";  
 
 export const store = configureStore({
   reducer: {
-    tickets: resolveTicket,
+    tickets: ticketsReducer,   
   },
 });
-
