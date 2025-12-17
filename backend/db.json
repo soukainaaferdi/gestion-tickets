@@ -2,8 +2,8 @@
   "tickets": [
     {
       "id": "3",
-      "titre": "rk",
-      "description": "ertyu",
+      "titre": "Erreur de connexion à l’application",
+      "description": "Impossible de se connecter à l’application interne avec des identifiants valides.",
       "categorie": "Technique",
       "priorite": "Haute",
       "statut": "En cours",
@@ -14,8 +14,8 @@
     },
     {
       "id": "4",
-      "titre": "Facture incorrecte",
-      "description": "Le montant de la facture ne correspond pas",
+      "titre": "Facture client incorrecte",
+      "description": "Le montant affiché sur la facture ne correspond pas au service facturé.",
       "categorie": "Facturation",
       "priorite": "Basse",
       "statut": "Résolu",
