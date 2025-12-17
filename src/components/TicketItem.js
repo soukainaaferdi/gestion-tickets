@@ -1,3 +1,4 @@
+import "../pages/style.css"
 import { calculateHours } from "../utils/timeUtils";
 import { useDispatch } from "react-redux";
 import { editTicket } from "../redux/ticketsSlice";
@@ -15,17 +16,22 @@ const handleResolve = () => {
   setTicket(updatedTicket);
 };
   return (
-    <div className="card p-3 mb-3 shadow-sm">
-      <h5 className="card-title text-center">{ticket.titre}</h5>
-      <strong className={`badge ${isLate ? "bg-danger" : "bg-secondary"} fs-6`}>
+    <div className=" p-2 ">
+   <div className="retard ">
+
+     <strong className={`badge ${isLate ? "bg-danger" : "bg-secondary"} fs-6 d-block  text-center`} >
         {isLate ? "En retard (48h+)" : `${hours}h`}
       </strong>
+     </div>
+     <div>
+
       {ticket.statut !== "Résolu" && (
         <button 
-          className="btn btn-success btn-sm mt-2" onClick={handleResolve}>
+          className="btn btn-success  resolu" onClick={handleResolve}>
           Marquer résolu
         </button>
       )}
+     </div>
      
     </div>
   );

@@ -40,4 +40,87 @@
       padding: 20px;
       margin-top: 50px;
       color: #6c757d;
-    }
+    } 
+    .sidebar {
+  width: 220px;
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.content {
+  margin-left: 220px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+/* Footer ثابت أسفل الصفحة */
+.footer {
+  position: fixed;  /* يبقى دائما فالقاع */
+  bottom: 0;        /* أسفل الصفحة */
+  left: 0;
+  width: 100%;      /* يغطي كامل العرض */
+  z-index: 1000; 
+     /* فوق المحتوى إذا لزم */
+}
+
+/* محتوى الصفحة مايتغطاش بالfooter */
+.content {
+  padding-bottom: 60px; /* نفس ارتفاع footer + مسافة */
+}
+.hero-title {
+  font-size: 4rem;   
+  font-weight: bold;
+  line-height: 1.2;  
+  margin-top: 19%;
+  margin-left: 70px;
+}
+
+.hero-title span {
+  display: block;   
+}
+
+.lead{
+  margin-top: 40px;
+  margin-left: 70px;
+  
+}
+ .landingPageWrapper {
+     background-color: #0d6efd;
+  min-height: 100vh; 
+  width: 100%;
+  color: white;      
+}
+
+.img{
+  margin-top:18%;
+  margin-left: 120px;
+}
+.retard{
+padding: 20px;
+width: 600px;
+margin-left: 90px;
+}
+ .resolu{
+width: 600px;
+margin-left: 90px;
+ }
+ .table-wrapper {
+    border-radius: 10px;
+    overflow: hidden; /* مهم بزاف */
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+   
+   
+}
+
+.custom-table {
+    margin-bottom: 0;
+     
+}
+
+.custom-table th,
+.custom-table td {
+    border: none;
+    padding: 20px;
+}

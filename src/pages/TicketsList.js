@@ -1,4 +1,5 @@
 import axios from "axios";
+import "../pages/style.css"
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 const TicketsList = () => {
@@ -23,26 +24,44 @@ const TicketsList = () => {
        
 
     return ( 
-    <div className=" ">
-        <div className="d-flex justify-content-center">
+    <div className="container py-5">
+        <div className="d-flex justify-content-between  ">
+                <nav class="navbar ">
+                <div class="container">
+                <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-dark" type="submit">Search</button>
+                </form>
+                </div>
+                </nav>
+                <div>
+
             <Link to="/tickets/ajouter">
             <button className="btn btn-success m-3">Ajouter +</button>
             </Link>
             <Link to="/">
             <button className="btn btn-warning my-3">Retour</button>
             </Link>
+                </div>
+        
+
         </div>
-            <div className=" d-flex justify-content-center align-item-center">
-                <table className="table ">
-                    <thead>
+        
+                <div  className="table-wrapper">
+            <div className=" d-flex justify-content-center align-item-center  ">
+
+                <table className="table table-hover custom-table ">
+
+                    <thead className="table-light">
+
                         <tr>
                             <th>nom client</th>
                             <th>email</th>
                             <th>Titre</th>
                             <th>Catégorie</th>
                             <th>Priorité</th>
-                            <th>Statut</th>
-                            <th>Action</th>
+                            <th className="text-center">Statut</th>
+                            <th className="text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,6 +86,7 @@ const TicketsList = () => {
                     ))}
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
      );

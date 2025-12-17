@@ -1,50 +1,216 @@
+// import axios from "axios";
+// import { useEffect, useState } from "react";
+// import { Link, useParams } from "react-router-dom";
+// import TicketItem from "../components/TicketItem";
+// import { calculateHours } from "../utils/timeUtils"
+// const TicketDetail = () => {
+//      const {id}= useParams()
+//      const [ticket, setTicket] = useState(null)
+//     useEffect(()=>{
+//         axios.get(`http://localhost:5000/tickets/${id}`)
+//         .then(res => setTicket(res.data))
+//         .catch(console.error)
+//     }, [id])
+//     if(!ticket){return null}
+
+//      const hours = calculateHours(ticket.dateCreation);
+//      const isLate = hours >= 48 && ticket.statut !== "Résolu" && ticket.statut !== "Fermé";
+//     return (             
+//         <div className="d-flex justify-content-center align-items-center ">
+
+                
+//                 <div className="card  mt-3 shadow-lg">
+//                     <div className="card-header bg-primary text-white d-flex justify-content-between align-items-center w-100">
+//                     <span>Details</span>
+//                     <div>
+
+//                   <Link to="/tickets">
+//                  <button className="btn btn-light ">Retour</button></Link>
+//                  <Link to={`/tickets/modifier/${ticket.id}`}>
+//                             <button className="btn btn-primary ">Modifier</button>
+//                         </Link> </div>
+//                     </div>
+//                     <h2 className="card-title  text-center">{ticket.titre}</h2>
+//                     <div className="card-body">
+//                         <p><strong>Nom :</strong> {ticket.nomClient}</p>
+//                         <p><strong>Email :</strong> {ticket.email}</p>
+//                         <p><strong>Catégorie :</strong> {ticket.categorie}</p>
+//                         <p><strong>Priorite :</strong> {ticket.priorite}</p>
+//                         <p><strong>Statut :</strong> {ticket.statut}</p>                
+//                         <p><strong>Date de creation :</strong> {new Date(ticket.dateCreation).toLocaleString("fr-FR")}</p>
+//                     <p><strong>Temps écoulé depuis creation :</strong><span className="badge bg-secondary text-white">{hours} H</span> </p>
+//                       <p><strong>Date de résolution :</strong> {ticket.dateResolution ? new Date(ticket.dateResolution).toLocaleString("fr-FR") : "Non résolu"}</p>
+//                         <p><strong>Badge retard : </strong>{isLate ? <strong className="text-danger">"En retard "</strong>: "OK "}</p>
+//                         <p className="card-text">{ticket.description}</p>
+//                        <div>
+                        
+//                             <TicketItem ticket={ticket} setTicket={setTicket} />
+//                        </div>
+//                     </div>
+//                 </div>
+//             </div>
+
+        
+//      );
+// }
+ 
+// export default TicketDetail;
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import TicketItem from "../components/TicketItem";
-import { calculateHours } from "../utils/timeUtils"
+import { calculateHours } from "../utils/timeUtils";
+
 const TicketDetail = () => {
-     const {id}= useParams()
-     const [ticket, setTicket] = useState(null)
-    useEffect(()=>{
-        axios.get(`http://localhost:5000/tickets/${id}`)
-        .then(res => setTicket(res.data))
-        .catch(console.error)
-    }, [id])
-    if(!ticket){return null}
+    const { id } = useParams();
+    const [ticket, setTicket] = useState(null);
 
-     const hours = calculateHours(ticket.dateCreation);
-     const isLate = hours >= 48 && ticket.statut !== "Résolu" && ticket.statut !== "Fermé";
-    return (             
-        <div className="d-flex justify-content-center align-items-center ">
-            <div className="row">
-                <TicketItem ticket={ticket} setTicket={setTicket} />
+    useEffect(() => {
+        axios
+            .get(`http://localhost:5000/tickets/${id}`)
+            .then(res => setTicket(res.data))
+            .catch(console.error);
+    }, [id]);
 
-                <div className="card p-2 mt-3 shadow-lg">
-                    <h2 className="card-title  text-center">{ticket.titre}</h2>
-                    <div className="card-body">
-                        <p className="card-text">{ticket.description}</p>
-                        <p><strong>Nom :</strong> {ticket.nomClient}</p>
-                        <p><strong>Email :</strong> {ticket.email}</p>
-                        <p><strong>Catégorie :</strong> {ticket.categorie}</p>
-                        <p><strong>Priorite :</strong> {ticket.priorite}</p>
-                        <p><strong>Statut :</strong> {ticket.statut}</p>                
-                        <p><strong>Date de creation :</strong> {new Date(ticket.dateCreation).toLocaleString("fr-FR")}</p>
-                    <p><strong>Temps écoulé depuis creation :</strong><span className="badge bg-info text-dark">{hours} H</span> </p>
-                      <p><strong>Date de résolution :</strong> {ticket.dateResolution ? new Date(ticket.dateResolution).toLocaleString("fr-FR") : "Non résolu"}</p>
-                        <p><strong>Badge retard : </strong>{isLate ? <span className="text-danger">"En retard "</span>: "OK "}</p>
+    if (!ticket) return null;
+
+    const hours = calculateHours(ticket.dateCreation);
+    const isLate =
+        hours >= 48 &&
+        ticket.statut !== "Résolu" &&
+        ticket.statut !== "Fermé";
+
+    return (
+        <div className="d-flex justify-content-center align-items-start mt-4">
+            <div
+                className="card shadow-lg"
+                style={{ maxWidth: "850px", width: "100%" }}
+            >
+                {/* HEADER */}
+                <div className="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                    <h5 className="mb-0">Détails du ticket</h5>
+
+                    <div className="d-flex gap-2">
                         <Link to="/tickets">
-                            <button className="btn btn-warning">Retour</button>
+                            <button className="btn btn-light btn-sm">
+                                Retour
+                            </button>
                         </Link>
+
                         <Link to={`/tickets/modifier/${ticket.id}`}>
-                            <button className="btn btn-primary mx-2">Modifier</button>
+                            <button className="btn btn-warning btn-sm">
+                                Modifier
+                            </button>
                         </Link>
                     </div>
                 </div>
-            </div>
 
+                {/* BODY */}
+                <div className="card-body">
+                    {/* TITLE */}
+                    <h4 className="text-center mb-4">
+                        {ticket.titre}
+                    </h4>
+
+                   
+                    <div className="row">
+                        <div className="col-md-6">
+                            <p>
+                                <strong>Nom :</strong> {ticket.nomClient}
+                            </p>
+                            <p>
+                                <strong>Email :</strong> {ticket.email}
+                            </p>
+                            <p>
+                                <strong>Catégorie :</strong> {ticket.categorie}
+                            </p>
+                            <p>
+                                <strong>Priorité :</strong>
+                                <span className="badge bg-info ms-2">
+                                    {ticket.priorite}
+                                </span>
+                            </p>
+                        </div>
+
+                        <div className="col-md-6">
+                            <p>
+                                <strong>Statut :</strong>
+                                <span
+                                    className={`badge ms-2 ${
+                                        ticket.statut === "Résolu"
+                                            ? "bg-success"
+                                            : ticket.statut === "En cours"
+                                            ? "bg-warning"
+                                            : "bg-secondary"
+                                    }`}
+                                >
+                                    {ticket.statut}
+                                </span>
+                            </p>
+
+                            <p>
+                                <strong>Date de création :</strong>
+                                <br />
+                                {new Date(
+                                    ticket.dateCreation
+                                ).toLocaleString("fr-FR")}
+                            </p>
+
+                            <p>
+                                <strong>Date de résolution :</strong>
+                                <br />
+                                {ticket.dateResolution ? (
+                                    new Date(
+                                        ticket.dateResolution
+                                    ).toLocaleString("fr-FR")
+                                ) : (
+                                    <span className="text-danger">
+                                        Non résolu
+                                    </span>
+                                )}
+                            </p>
+                        </div>
+                    </div>
+
+                   
+                    <div className="d-flex justify-content-between align-items-center mt-3 p-3 bg-light rounded">
+                        <div>
+                            <strong>Temps écoulé :</strong>
+                            <span className="badge bg-dark ms-2">
+                                {hours} h
+                            </span>
+                        </div>
+
+                        <div>
+                            {isLate ? (
+                                <span className="badge bg-danger">
+                                    En retard
+                                </span>
+                            ) : (
+                                <span className="badge bg-success">
+                                    OK
+                                </span>
+                            )}
+                        </div>
+                    </div>
+
+                   
+                    <div className="mt-4 p-3 border rounded">
+                        <h6>Description</h6>
+                        <p className="mb-0">{ticket.description}</p>
+                    </div>
+
+                    
+                    <hr />
+                    <TicketItem
+                        ticket={ticket}
+                        setTicket={setTicket}
+                    />
+                </div>
+            </div>
         </div>
-     );
-}
- 
+    );
+};
+
 export default TicketDetail;
+
