@@ -18,6 +18,12 @@
       max-width: 700px;
       margin: auto;
     }
+      .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
     .btn-dashboard {
       margin-top: 20px;
       font-size: 1.2rem;
@@ -110,8 +116,6 @@ margin-left: 90px;
     overflow: hidden; /* مهم بزاف */
     background-color: white;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-   
-   
 }
 
 .custom-table {
@@ -123,4 +127,15 @@ margin-left: 90px;
 .custom-table td {
     border: none;
     padding: 20px;
+}
+.btn1{
+  margin-left: 90px;
+}
+.card{
+  max-width: 850px;
+  width: 100%;
+}
+.btn2{
+  width: 565px;
+  margin-left: 110px;
 }

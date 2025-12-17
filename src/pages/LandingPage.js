@@ -6,7 +6,6 @@ const LandingPage = () => {
       <div className="landingPageWrapper">
   <div className="row align-items-center ">
 
-    {/* الصورة على اليسار */}
     <div className="col-md-6 text-center">
       <img 
         src="/Sécrétaire___Loup_party__-removebg-preview.png" 
@@ -15,7 +14,6 @@ const LandingPage = () => {
       />
     </div>
 
-    {/* النص على اليمين */}
     <div className="col-md-6 text-start">
       <h1 className="hero-title">
         <span>Gestion de</span>
@@ -25,37 +23,12 @@ const LandingPage = () => {
         DigiServices, une entreprise IT de Casablanca avec 200 employés,<br/> 
         reçoit quotidiennement des demandes d'assistance...
       </p>
+      <Link to="/dashboard" >
+        <button class=" btn1 btn btn-light btn-dashboard mt-3">Accéder à l'application</button>
+      </Link>
     </div>
 
   </div>
-
-
-
-
- 
-{/* 
-    <div className="team mb-5">
-      <h2 className="section-title">Membres de l'équipe</h2>
-      <div className="row justify-content-center">
-        <div className="col-md-3 mb-4">
-          
-              <div className="card text-center p-3 shadow">
-            <div className="card-body">
-
-              <h5 className="card-title">Soukaina Aferdi</h5>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-3 mb-4">
-          <div className="card text-center p-3">
-            <div className="card-body">
-              <h5 className="card-title">Douaa Abkour</h5>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> */}
 
   <footer className="footer  text-white text-center py-3">
       &copy; 2025 DigiServices - Projet Gestion de Tickets
@@ -68,34 +41,6 @@ const LandingPage = () => {
 
 export default LandingPage;
 
-/*
-      <div className="row mt-5">
-        <div className="col-md-3">
-          <div className="card p-3 shadow">
-            <h4>Tickets ouverts</h4>
-            <p>...</p>
-          </div>
-        </div>
-        <div className="col-md-3">
-          <div className="card p-3 shadow">
-            <h4>Tickets en retard</h4>
-            <p>...</p>
-          </div>
-        </div>
-        <div className="col-md-3">
-          <div className="card p-3 shadow">
-            <h4>Temps moyen de résolution</h4>
-            <p>...</p>
-          </div>
-        </div>
-        <div className="col-md-3">
-          <div className="card p-3 shadow">
-            <h4>Taux de résolution</h4>
-            <p>...</p>
-          </div>
-        </div>
-      </div>
-      */
 
      
 

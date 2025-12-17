@@ -1,4 +1,3 @@
-
 import "../pages/style.css"
 import { calculateHours } from "../utils/timeUtils";
 import { useDispatch } from "react-redux";
@@ -22,23 +21,20 @@ const TicketItem = ({ ticket }) => {
   return (
 
     <div className=" p-2 ">
-   <div className="retard ">
-
-     <strong className={`badge ${isLate ? "bg-danger" : "bg-secondary"} fs-6 d-block  text-center`} >
-
-  
-        {isLate ? "En retard (48h+)" : `${hours}h`}
-      </strong>
-     </div>
-     <div>
-
       {ticket.statut !== "Résolu" && (
-
         <button 
-          className="btn btn-success  resolu" onClick={handleResolve}>
+          className="btn2 btn btn-success  resolu" onClick={handleResolve}>
           Marquer résolu
         </button>
       )}
+      
+     <div className="retard ">
+      <strong className={`alert role="alert" ${isLate ? "alert-danger" :"" } fs-6 d-block  text-center`} >
+        {isLate ? "En retard (48h+)" : ``}
+        
+      </strong>
+     </div>
+     <div>
      </div>
      
 

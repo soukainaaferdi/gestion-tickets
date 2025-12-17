@@ -55,9 +55,6 @@ const AddTicket = () => {
           <option>Urgente</option>
         </select>
         <button type="submit" className="btn btn-primary m-2">Create</button>
-        <Link to="/tickets">
-          <button type="button" className="btn btn-warning">Retour</button>
-        </Link>
       </form>
     </div>
   );

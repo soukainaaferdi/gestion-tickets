@@ -13,8 +13,6 @@ const Dashboard = () => {
       .catch(console.error);
   }, []);
 
-
- // const date = tickets.filter(t=>(new Date(t.dateCreation).getMonth( )=== Number (formData)));
   const ticketsFiltrés = formData
   ? tickets.filter(t => {
       const ticketDate = new Date(t.dateCreation).toISOString().split("T")[0];
@@ -57,9 +55,6 @@ const Dashboard = () => {
     <div className="container mt-4">
       <div className="d-flex justify-content-between">
         <h2 className="mb-4">Dashboard</h2>
-        <Link to="/">
-        <button className="btn btn-warning mb-3">Retour</button>
-        </Link>
       </div>
       <div className="mb-3">
         <label>Choisir une date : </label>
