@@ -1,95 +1,181 @@
+
 import axios from "axios";
 import "../pages/style.css"
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { fetchTickets, supprimerTicket } from "../redux/ticketsSlice";
+
 const TicketsList = () => {
-    const [tickets, setTickets] = useState([])
-        useEffect(
-        ()=>{ axios.get('http://localhost:5000/tickets')
-       .then(reponse=>{
-           setTickets(reponse.data)
-       })
-        .catch(console.error)
-        },[])
+  const dispatch = useDispatch();
+  const tickets = useSelector(state => state.tickets.tickets);
 
-        const deleteTicket =(id)=>{
-            axios.delete(`http://localhost:5000/tickets/${id}`)
-            .then(()=>{
-                setTickets(prev =>
-                    prev.filter(t => t.id !== id))
-                
-            })
-            .catch(console.error)
-        }
-       
+  const [visible, setVisible] = useState(7)
 
-    return ( 
-    <div className="container py-5">
-        <div className="d-flex justify-content-between  ">
-                <nav class="navbar ">
-                <div class="container">
-                <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-outline-dark" type="submit">Search</button>
-                </form>
-                </div>
-                </nav>
-                <div>
 
-            <Link to="/tickets/ajouter">
-            <button className="btn btn-success m-3">Ajouter +</button>
-            </Link>
-            <Link to="/">
-            <button className="btn btn-warning my-3">Retour</button>
-            </Link>
-                </div>
-        
+  const handleVisible=()=>{
+    setVisible((t) => t + 7)
+  }
 
-        </div>
-        
-                <div  className="table-wrapper">
-            <div className=" d-flex justify-content-center align-item-center  ">
+  useEffect(() => {
+    dispatch(fetchTickets());
+  }, [dispatch]);
 
-                <table className="table table-hover custom-table ">
+  return (
+ <div className="container py-4">
+  <div className="d-flex justify-content-between align-items-center mb-3">
+    {/* Search Input à gauche */}
+    <form className="d-flex" role="search">
+      <input
+        className="form-control me-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button className="btn btn-outline-dark" type="submit">
+        Search
+      </button>
+    </form>
 
-                    <thead className="table-light">
+    {/* Buttons à droite */}
+    <div>
+      <Link to="/tickets/ajouter">
+        <button className="btn btn-success mx-2">Ajouter +</button>
+      </Link>
+      <Link to="/">
+        <button className="btn btn-warning mx-2">Retour</button>
+      </Link>
+    </div>
+  </div>
 
-                        <tr>
-                            <th>nom client</th>
-                            <th>email</th>
-                            <th>Titre</th>
-                            <th>Catégorie</th>
-                            <th>Priorité</th>
-                            <th className="text-center">Statut</th>
-                            <th className="text-center">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {tickets.map(ticket => (
-                        <tr key={ticket.id}>
-                            <td>{ticket.nomClient}</td>
-                            <td>{ticket.email}</td>
-                            <td>{ticket.titre}</td>
-                            <td>{ticket.categorie}</td>
-                            <td>{ticket.priorite}</td>
-                            <td>{ticket.statut}</td>
-                            <td>
-                                <div className="d-flex">
-                                <Link to={`/tickets/${ticket.id}`}>
-                                    <button className="btn btn-primary mx-3">Voir</button>
-                                </Link>
-                                    <button className="btn btn-danger" onClick={()=>deleteTicket(ticket.id)}>Supprimer</button>
-                                </div>
-                            </td>
-                        </tr>
+  {/* Table */}
+  <div className="table-wrapper d-flex justify-content-center">
+    <table className="table table-hover custom-table">
+      <thead className="table-light">
+        <tr>
+          <th>Nom client</th>
+          <th>Email</th>
+          <th>Titre</th>
+          <th>Catégorie</th>
+          <th>Priorité</th>
+          <th className="text-center">Statut</th>
+          <th className="text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {tickets.slice(0, visible).map(ticket => (
+          <tr key={ticket.id}>
+            <td>{ticket.nomClient}</td>
+            <td>{ticket.email}</td>
+            <td>{ticket.titre}</td>
+            <td>{ticket.categorie}</td>
+            <td>{ticket.priorite}</td>
+            <td>{ticket.statut}</td>
+            <td>
+              <div className="d-flex">
+                <Link to={`/tickets/${ticket.id}`}>
+                  <button className="btn btn-primary mx-2">Voir</button>
+                </Link>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => {
+                    if (window.confirm("Voulez-vous vraiment supprimer ce ticket ?")) {
+                      dispatch(supprimerTicket(ticket.id));
+                    }
+                  }}
+                >
+                  Supprimer
+                </button>
+              </div>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
 
-                    ))}
-                    </tbody>
-                </table>
-                </div>
-            </div>
-        </div>
-     );
-}
- 
+  {/* Voir plus */}
+  {visible < tickets.length && (
+    <div className="d-flex justify-content-center mt-3">
+      <button className="btn btn-primary" onClick={handleVisible}>
+        Voir plus
+      </button>
+    </div>
+  )}
+</div>
+
+
+    // <div className="container">
+    //         <div className="d-flex justify-content-between  ">
+    //             <nav className="navbar ">
+    //             <div className="container">
+    //             <form className="d-flex" role="search">
+    //             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+    //             <button className="btn btn-outline-dark" type="submit">Search</button>
+    //             </form>
+    //             </div>
+    //             </nav>
+    //             <div>
+    //     <Link to="/tickets/ajouter"><button className="btn btn-success m-3">Ajouter +</button></Link>
+    //     <Link to="/"><button className="btn btn-warning my-3">Retour</button></Link>
+      
+      
+    //        <div  className="table-wrapper">
+    //   <div className="d-flex justify-content-center align-items-center">
+
+    //    <table className="table table-hover custom-table ">
+
+    //       <thead className="table-light">
+    //         <tr>
+    //           <th>Nom client</th>
+    //           <th>Email</th>
+    //           <th>Titre</th>
+    //           <th>Catégorie</th>
+    //           <th>Priorité</th>
+    //           <th className="d-center">Statut</th>
+    //           <th className="d-center">Action</th>
+    //         </tr>
+    //       </thead>
+    //       <tbody>
+    //         {tickets.slice(0, visible).map(ticket => (
+    //           <tr key={ticket.id}>
+    //             <td>{ticket.nomClient}</td>
+    //             <td>{ticket.email}</td>
+    //             <td>{ticket.titre}</td>
+    //             <td>{ticket.categorie}</td>
+    //             <td>{ticket.priorite}</td>
+    //             <td>{ticket.statut}</td>
+    //             <td>
+    //               <div className="d-flex">
+    //                 <Link to={`/tickets/${ticket.id}`}><button className="btn btn-primary mx-3">Voir</button></Link>
+    //                 <button className="btn btn-danger" onClick={() => {
+    //                     const ok = window.confirm("Voulez-vous vraiment supprimer ce ticket ?");
+    //                     if(ok){
+    //                         dispatch(supprimerTicket(ticket.id))}
+    //                     }}>Supprimer
+    //                 </button>
+    //               </div>
+    //             </td>
+    //           </tr>
+    //         ))}
+    //       </tbody>
+    //     </table>
+    //     </div>
+    //     </div>
+    //     </div>
+    //     </div>
+      
+      
+    //     {visible < tickets.length && (
+    //     <div className="d-flex justify-content-center mt-3">
+    //       <button className="btn btn-primary" onClick={handleVisible}>
+    //         Voir plus
+    //       </button>
+    //     </div>
+    //     )}
+    // </div>
+  );
+};
+
 export default TicketsList;
+

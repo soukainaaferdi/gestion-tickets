@@ -1,60 +1,4 @@
-// import axios from "axios";
-// import { useEffect, useState } from "react";
-// import { Link, useParams } from "react-router-dom";
-// import TicketItem from "../components/TicketItem";
-// import { calculateHours } from "../utils/timeUtils"
-// const TicketDetail = () => {
-//      const {id}= useParams()
-//      const [ticket, setTicket] = useState(null)
-//     useEffect(()=>{
-//         axios.get(`http://localhost:5000/tickets/${id}`)
-//         .then(res => setTicket(res.data))
-//         .catch(console.error)
-//     }, [id])
-//     if(!ticket){return null}
 
-//      const hours = calculateHours(ticket.dateCreation);
-//      const isLate = hours >= 48 && ticket.statut !== "Résolu" && ticket.statut !== "Fermé";
-//     return (             
-//         <div className="d-flex justify-content-center align-items-center ">
-
-                
-//                 <div className="card  mt-3 shadow-lg">
-//                     <div className="card-header bg-primary text-white d-flex justify-content-between align-items-center w-100">
-//                     <span>Details</span>
-//                     <div>
-
-//                   <Link to="/tickets">
-//                  <button className="btn btn-light ">Retour</button></Link>
-//                  <Link to={`/tickets/modifier/${ticket.id}`}>
-//                             <button className="btn btn-primary ">Modifier</button>
-//                         </Link> </div>
-//                     </div>
-//                     <h2 className="card-title  text-center">{ticket.titre}</h2>
-//                     <div className="card-body">
-//                         <p><strong>Nom :</strong> {ticket.nomClient}</p>
-//                         <p><strong>Email :</strong> {ticket.email}</p>
-//                         <p><strong>Catégorie :</strong> {ticket.categorie}</p>
-//                         <p><strong>Priorite :</strong> {ticket.priorite}</p>
-//                         <p><strong>Statut :</strong> {ticket.statut}</p>                
-//                         <p><strong>Date de creation :</strong> {new Date(ticket.dateCreation).toLocaleString("fr-FR")}</p>
-//                     <p><strong>Temps écoulé depuis creation :</strong><span className="badge bg-secondary text-white">{hours} H</span> </p>
-//                       <p><strong>Date de résolution :</strong> {ticket.dateResolution ? new Date(ticket.dateResolution).toLocaleString("fr-FR") : "Non résolu"}</p>
-//                         <p><strong>Badge retard : </strong>{isLate ? <strong className="text-danger">"En retard "</strong>: "OK "}</p>
-//                         <p className="card-text">{ticket.description}</p>
-//                        <div>
-                        
-//                             <TicketItem ticket={ticket} setTicket={setTicket} />
-//                        </div>
-//                     </div>
-//                 </div>
-//             </div>
-
-        
-//      );
-// }
- 
-// export default TicketDetail;
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
@@ -86,7 +30,7 @@ const TicketDetail = () => {
                 className="card shadow-lg"
                 style={{ maxWidth: "850px", width: "100%" }}
             >
-                {/* HEADER */}
+             
                 <div className="card-header bg-primary text-white d-flex justify-content-between align-items-center">
                     <h5 className="mb-0">Détails du ticket</h5>
 
@@ -105,9 +49,8 @@ const TicketDetail = () => {
                     </div>
                 </div>
 
-                {/* BODY */}
                 <div className="card-body">
-                    {/* TITLE */}
+                   
                     <h4 className="text-center mb-4">
                         {ticket.titre}
                     </h4>
@@ -210,7 +153,57 @@ const TicketDetail = () => {
             </div>
         </div>
     );
-};
-
+}
 export default TicketDetail;
+
+
+
+// import { useEffect } from "react";
+// import { useDispatch, useSelector } from "react-redux";
+// import { Link, useParams } from "react-router-dom";
+// import TicketItem from "../components/TicketItem";
+// import { fetchTicketById } from "../redux/ticketsSlice";
+// import { calculateHours } from "../utils/timeUtils";
+
+// const TicketDetail = () => {
+//   const { id } = useParams();
+//   const ticket = useSelector(state => state.tickets.currentTicket);
+//   const dispatch = useDispatch();
+
+//   useEffect(() => {
+//     dispatch(fetchTicketById(id));
+//   }, [dispatch, id]);
+
+//   if (!ticket) return null;
+
+//   const hours = calculateHours(ticket.dateCreation);
+//   const isLate = hours >= 48 && ticket.statut !== "Résolu" && ticket.statut !== "Fermé";
+
+//   return (
+//     <div className="d-flex justify-content-center align-items-center">
+//       <div className="row">
+//         <TicketItem ticket={ticket} />
+//         <div className="card p-2 mt-3 shadow-lg">
+//           <h2 className="card-title text-center">{ticket.titre}</h2>
+//           <div className="card-body">
+//             <p>{ticket.description}</p>
+//             <p><strong>Nom :</strong> {ticket.nomClient}</p>
+//             <p><strong>Email :</strong> {ticket.email}</p>
+//             <p><strong>Catégorie :</strong> {ticket.categorie}</p>
+//             <p><strong>Priorité :</strong> {ticket.priorite}</p>
+//             <p><strong>Statut :</strong> {ticket.statut}</p>
+//             <p><strong>Date de création :</strong> {new Date(ticket.dateCreation).toLocaleString("fr-FR")}</p>
+//             <p><strong>Temps écoulé :</strong> {hours}h {isLate && <span className="text-danger"> En retard</span>}</p>
+//             <p><strong>Date de résolution :</strong> {ticket.dateResolution ? new Date(ticket.dateResolution).toLocaleString("fr-FR") : "Non résolu"}</p>
+//             <Link to="/tickets"><button className="btn btn-warning">Retour</button></Link>
+//             <Link to={`/tickets/modifier/${ticket.id}`}><button className="btn btn-primary mx-2">Modifier</button></Link>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+
+// };
+
+// export default TicketDetail;
 

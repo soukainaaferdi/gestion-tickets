@@ -1,64 +1,148 @@
 {
   "tickets": [
     {
-      "id": "2",
-      "titre": "Panne imprimante bureau",
-      "description": "L’imprimante du service administratif ne répond plus aux commandes.",
-      "categorie": "Matériel",
-      "priorite": "Moyenne",
-      "statut": "Résolu",
-      "nomClient": "Client B",
-      "email": "clientb@email.com",
-      "dateCreation": "2025-12-10T14:30:00.000Z",
-      "dateResolution": "2025-12-17T20:29:17.217Z"
-    },
-    {
       "id": "3",
       "titre": "Erreur de connexion à l’application",
       "description": "Impossible de se connecter à l’application interne avec des identifiants valides.",
       "categorie": "Technique",
       "priorite": "Haute",
       "statut": "Résolu",
-      "nomClient": "Soukaina Aferdi",
+      "nomClient": "soukaina",
       "email": "aferdisoukaina8@gmail.com",
       "dateCreation": "2025-12-09T09:15:00.000Z",
-      "dateResolution": "2025-12-15T18:32:03.333Z"
+      "dateResolution": "2025-12-17T21:07:50.339Z"
     },
     {
       "id": "4",
       "titre": "Facture client incorrecte",
       "description": "Le montant affiché sur la facture ne correspond pas au service facturé.",
       "categorie": "Facturation",
-      "priorite": "Urgente",
+      "priorite": "Basse",
       "statut": "Résolu",
-      "nomClient": "Client D",
+      "nomClient": "abkour",
       "email": "clientd@email.com",
       "dateCreation": "2025-12-08T11:45:00.000Z",
-      "dateResolution": "2025-12-17T18:15:43.634Z"
+      "dateResolution": "2025-12-16T13:48:58.101Z"
     },
     {
-      "id": "d5b9",
-      "nomClient": "Client d",
-      "email": "cliente@email.com",
-      "titre": "Problème souris USB",
-      "description": "La souris USB se déconnecte de manière aléatoire",
+      "id": "f9d3",
+      "nomClient": "cline",
+      "email": "cline@gmail.com",
+      "titre": "hello",
+      "description": "ghjk",
       "categorie": "Matériel",
-      "priorite": "Haute",
+      "priorite": "Moyenne",
       "statut": "Résolu",
-      "dateCreation": "2025-12-15T20:56:04.128Z",
-      "dateResolution": "2025-12-15T21:01:01.817Z"
+      "dateCreation": "2025-12-13T23:49:02.000Z",
+      "dateResolution": "2025-12-17T21:29:10.384Z"
     },
     {
-      "id": "0a00",
-      "nomClient": "hiba",
-      "email": "hiba@gmail.com",
-      "titre": "hiba",
-      "description": "hello hiba",
+      "id": "b865",
+      "nomClient": "douaa",
+      "email": "abkour@gmail.com",
+      "titre": "titre",
+      "description": "description",
       "categorie": "Technique",
       "priorite": "Moyenne",
       "statut": "Résolu",
-      "dateCreation": "2025-12-17T17:05:21.621Z",
-      "dateResolution": "2025-12-17T17:17:04.583Z"
+      "dateCreation": "2025-12-17T17:31:45.856Z",
+      "dateResolution": "2025-12-17T17:56:28.334Z"
+    },
+    {
+      "id": "b5a7",
+      "nomClient": "salma",
+      "email": "salma@gmail.com",
+      "titre": "title",
+      "description": "desc",
+      "categorie": "Matériel",
+      "priorite": "Haute",
+      "statut": "Résolu",
+      "dateCreation": "2025-12-17T18:57:26.103Z",
+      "dateResolution": "2025-12-17T21:10:43.033Z"
+    },
+    {
+      "id": "d18c",
+      "nomClient": "1",
+      "email": "soukaina@gmail.com",
+      "titre": "title",
+      "description": "desc",
+      "categorie": "Technique",
+      "priorite": "Basse",
+      "statut": "Résolu",
+      "dateCreation": "2025-12-17T18:57:50.047Z",
+      "dateResolution": "2025-12-17T21:10:53.145Z"
+    },
+    {
+      "id": "6422",
+      "nomClient": "2",
+      "email": "abkour@gmail.com",
+      "titre": "Title2",
+      "description": "s",
+      "categorie": "Technique",
+      "priorite": "Basse",
+      "statut": "Résolu",
+      "dateCreation": "2025-12-17T18:58:36.679Z",
+      "dateResolution": "2025-12-17T21:16:11.687Z"
+    },
+    {
+      "id": "186d",
+      "nomClient": "3",
+      "email": "abkour@gmail.com",
+      "titre": "Title3",
+      "description": "aaaaaaaa",
+      "categorie": "Matériel",
+      "priorite": "Moyenne",
+      "statut": "Nouveau",
+      "dateCreation": "2025-12-17T18:58:49.064Z",
+      "dateResolution": null
+    },
+    {
+      "id": "9713",
+      "nomClient": "4",
+      "email": "abkourdouaa@gmail.com",
+      "titre": "Title4",
+      "description": "sss",
+      "categorie": "Compte",
+      "priorite": "Urgente",
+      "statut": "Nouveau",
+      "dateCreation": "2025-12-17T18:59:03.139Z",
+      "dateResolution": null
+    },
+    {
+      "id": "2386",
+      "nomClient": "5",
+      "email": "douaa@gmail.com",
+      "titre": "Title5",
+      "description": "ssss",
+      "categorie": "Compte",
+      "priorite": "Haute",
+      "statut": "Nouveau",
+      "dateCreation": "2025-12-17T19:07:13.938Z",
+      "dateResolution": null
+    },
+    {
+      "id": "b73a",
+      "nomClient": "6",
+      "email": "abkour@gmail.com",
+      "titre": "Title6",
+      "description": "ljljsljlq",
+      "categorie": "Matériel",
+      "priorite": "Urgente",
+      "statut": "Nouveau",
+      "dateCreation": "2025-12-17T19:07:38.333Z",
+      "dateResolution": null
+    },
+    {
+      "id": "2253",
+      "nomClient": "7",
+      "email": "abkourdouaa@gmail.com",
+      "titre": "Title7",
+      "description": "izhdihzidhzidhzdzd",
+      "categorie": "Facturation",
+      "priorite": "Haute",
+      "statut": "Nouveau",
+      "dateCreation": "2025-12-17T19:07:57.923Z",
+      "dateResolution": null
     }
   ]
 }
