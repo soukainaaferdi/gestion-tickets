@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const [tickets, setTickets] = useState([]);
+  const [formData,setFormData]=useState('')
 
   useEffect(() => {
     axios
@@ -12,19 +13,26 @@ const Dashboard = () => {
       .catch(console.error);
   }, []);
 
-  // 🟦 Tickets ouverts
+
+ // const date = tickets.filter(t=>(new Date(t.dateCreation).getMonth( )=== Number (formData)));
+  const ticketsFiltrés = formData
+  ? tickets.filter(t => {
+      const ticketDate = new Date(t.dateCreation).toISOString().split("T")[0];
+      return ticketDate === formData;
+    })
+  : tickets;
+
+  
   const openTickets = tickets.filter(
     t => t.statut === "Nouveau" || t.statut === "En cours"
   );
 
-  // 🔴 Tickets en retard (>48h)
   const lateTickets = tickets.filter(t => {
     if (t.statut === "Résolu" || t.statut === "Fermé") return false;
     const diff = Date.now() - new Date(t.dateCreation).getTime();
     return diff > 48 * 60 * 60 * 1000;
   });
 
-  // 🟩 Temps moyen de résolution
   const resolvedTickets = tickets.filter(t => t.dateResolution);
   const avgResolutionTime =
     resolvedTickets.length > 0
@@ -39,7 +47,7 @@ const Dashboard = () => {
         )
       : 0;
 
-  // 🔵 Taux de résolution
+
   const resolutionRate =
     tickets.length > 0
       ? Math.round((resolvedTickets.length / tickets.length) * 100)
@@ -52,6 +60,10 @@ const Dashboard = () => {
         <Link to="/">
         <button className="btn btn-warning mb-3">Retour</button>
         </Link>
+      </div>
+      <div className="mb-3">
+        <label>Choisir une date : </label>
+        <input type="date" min="0" max="11" value={formData} onChange={(e) => setFormData(e.target.value)} className="form-control w-25" />
       </div>
 
       <div className="row text-center">
@@ -84,7 +96,6 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Derniers tickets */}
       <div className="mt-5">
         <h4>Derniers tickets</h4>
         <table className="table table-striped">
@@ -97,13 +108,15 @@ const Dashboard = () => {
             </tr>
           </thead>
           <tbody>
-            {tickets.slice(-5).map(t => (
+            {ticketsFiltrés.slice(-5).map(t => (
               <tr key={t.id}>
                 <td>{t.titre}</td>
                 <td>{t.statut}</td>
                 <td>{t.priorite}</td>
                 <td>
                   {new Date(t.dateCreation).toLocaleDateString("fr-FR")}
+                
+
                 </td>
               </tr>
             ))}

@@ -1,47 +1,11 @@
-/*import axios from "axios";
-import { createAsyncThunk } from "@reduxjs/toolkit";
-
-export const resolveTicket = createAsyncThunk(
-  "tickets/resolve",
-  (ticket) => {
-    ticket.statut = "Résolu";
-    ticket.resolvedAt = new Date().toISOString();
-
-    return axios
-      .put(`http://localhost:5000/tickets/${ticket.id}`, ticket)
-      .then((response) => response.data);
-  }
-);
-import axios from "axios";
-import { createAsyncThunk } from "@reduxjs/toolkit";
-
-export const resolveTicket = createAsyncThunk(
-  "tickets/resolve",
-  (ticket) => {
-    ticket.statut = "Résolu";
-    ticket.dateResolution = new Date().toISOString();  // ← هنا بدل resolvedAt
-
-    return axios
-      .put(`http://localhost:5000/tickets/${ticket.id}`, ticket)
-      .then((response) => response.data);
-  }
-);*/
+import {getTickets,getTicketById,createTicket,updateTicket,deleteTicket,} from "../api/ticketsApi"
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  getTickets,
-  getTicketById,
-  createTicket,
-  updateTicket,
-  deleteTicket,
-} from "../api/ticketsApi";
 
 const ticketsSlice = createSlice({
   name: "tickets",
   initialState: {
     tickets: [],
     currentTicket: null,
-    loading: false,
-    error: null,
   },
   reducers: {
     setTickets(state, action) {
@@ -50,95 +14,52 @@ const ticketsSlice = createSlice({
     setCurrentTicket(state, action) {
       state.currentTicket = action.payload;
     },
-    setLoading(state, action) {
-      state.loading = action.payload;
-    },
-    setError(state, action) {
-      state.error = action.payload;
-    },
   },
 });
 
-export const {
-  setTickets,
-  setCurrentTicket,
-  setLoading,
-  setError,
-} = ticketsSlice.actions;
-
-// ===== Action Creators بالـ then/catch =====
-
-// جلب جميع التذاكر
 export const fetchTickets = () => (dispatch) => {
-  dispatch(setLoading(true));
   getTickets()
     .then((res) => {
       dispatch(setTickets(res.data));
-;
-      dispatch(setLoading(false));
     })
-    .catch((err) => {
-      dispatch(setError(err.message));
-      dispatch(setLoading(false));
-    });
+    .catch(console.error);
 };
 
-// جلب تذكرة واحدة
+// Get single ticket by id
 export const fetchTicketById = (id) => (dispatch) => {
-  dispatch(setLoading(true));
   getTicketById(id)
     .then((res) => {
       dispatch(setCurrentTicket(res.data));
-      dispatch(setLoading(false));
     })
-    .catch((err) => {
-      dispatch(setError(err.message));
-      dispatch(setLoading(false));
-    });
+    .catch(console.error);
 };
 
-// إضافة تذكرة جديدة
+// Add new ticket
 export const addTicket = (ticket) => (dispatch) => {
-  dispatch(setLoading(true));
   createTicket(ticket)
-    .then((res) => {
-      dispatch(fetchTickets()); // بعد الإضافة نجلب جميع التذاكر
-      dispatch(setLoading(false));
+    .then(() => {
+      dispatch(fetchTickets());
     })
-    .catch((err) => {
-      dispatch(setError(err.message));
-      dispatch(setLoading(false));
-    });
+    .catch(console.error);
 };
 
-// تعديل تذكرة
+// Edit ticket
 export const editTicket = (id, ticket) => (dispatch) => {
-  dispatch(setLoading(true));
   updateTicket(id, ticket)
     .then((res) => {
+      dispatch(setCurrentTicket(res.data))
       dispatch(fetchTickets());
-      dispatch(setLoading(false));
     })
-    .catch((err) => {
-      dispatch(setError(err.message));
-      dispatch(setLoading(false));
-    });
+    .catch(console.error);
 };
-
-// حذف تذكرة
-export const removeTicket = (id) => (dispatch) => {
-  dispatch(setLoading(true));
+// Delete ticket
+export const supprimerTicket = (id) => (dispatch) => {
   deleteTicket(id)
     .then(() => {
       dispatch(fetchTickets());
-      dispatch(setLoading(false));
     })
-    .catch((err) => {
-      dispatch(setError(err.message));
-      dispatch(setLoading(false));
-    });
+    .catch(console.error);
 };
 
+export const { setTickets, setCurrentTicket } = ticketsSlice.actions;
 export default ticketsSlice.reducer;
-
-

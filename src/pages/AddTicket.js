@@ -1,74 +1,66 @@
-import axios from "axios";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { addTicket } from "../redux/ticketsSlice";
+
 const AddTicket = () => {
-     const navigate = useNavigate()
-    const [ticket, setTicket] = useState({
-        nomClient:"",
-        email:"",
-        titre:"",
-        description:"",
-        categorie:"",
-        priorite:"",
-        statut:"Nouveau",
-        dateCreation: new Date().toISOString(),/* dateCreation : new Date().toLocaleString("fr-FR")*/ 
-        dateResolution: null
-    })
-    const handleChange=(e)=>{
-        setTicket({
-            ...ticket, [e.target.name] : e.target.value
-        })
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [ticket, setTicket] = useState({
+    nomClient: "",
+    email: "",
+    titre: "",
+    description: "",
+    categorie: "",
+    priorite: "",
+    statut: "Nouveau",
+    dateCreation: new Date().toISOString(),
+    dateResolution: null
+  });
+
+  const handleChange = (e) => {
+    setTicket({ ...ticket, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!ticket.titre || !ticket.description || !ticket.categorie || !ticket.priorite) {
+      alert("Entrer tous les champs");
+      return;
     }
-    
-    const handleSubmit=(e)=>{
-        e.preventDefault();
+    dispatch(addTicket(ticket));
+    navigate("/tickets");
+  };
 
-        if (!ticket.titre || !ticket.description || !ticket.categorie || !ticket.priorite){
-            alert("Entrer tous les champs")
-            return
-        }
+  return (
+    <div className="container">
+      <h1 className="m-3">Ajouter un nouveau ticket</h1>
+      <form onSubmit={handleSubmit}>
+        <input type="text" placeholder="Nom" name="nomClient" className="form-control m-2" onChange={handleChange}/>
+        <input type="email" placeholder="Email" name="email" className="form-control m-2" onChange={handleChange}/>
+        <input type="text" placeholder="Title" name="titre" className="form-control m-2" onChange={handleChange}/>
+        <textarea placeholder="Description" name="description" className="form-control m-2" onChange={handleChange}/>
+        <select name="categorie" className="form-control m-2" onChange={handleChange}>
+          <option value="">Catégorie</option>
+          <option>Technique</option>
+          <option>Matériel</option>
+          <option>Compte</option>
+          <option>Facturation</option>
+        </select>
+        <select name="priorite" className="form-control m-2" onChange={handleChange}>
+          <option value="">Priorité</option>
+          <option>Basse</option>
+          <option>Moyenne</option>
+          <option>Haute</option>
+          <option>Urgente</option>
+        </select>
+        <button type="submit" className="btn btn-primary m-2">Create</button>
+        <Link to="/tickets">
+          <button type="button" className="btn btn-warning">Retour</button>
+        </Link>
+      </form>
+    </div>
+  );
+};
 
-        axios.post('http://localhost:5000/tickets', ticket)
-        .then(()=>{
-            navigate("/tickets")
-        })
-        .catch(console.error)
-    }
-    return (  
-        <div className="container">
-            <h1 className="m-3">Ajouter un nouveau ticket</h1>
-            <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Nom" className="form-control m-2" name="nomClient" onChange={handleChange}/>
-            <input type="email" placeholder="Email" className="form-control m-2" name="email" onChange={handleChange}/>
-            <input type="text" placeholder="Title" className="form-control m-2" name="titre" onChange={handleChange}/>
-            <textarea placeholder="Description" className="form-control m-2" name="description" onChange={handleChange}/>
-
-            <select className="form-control m-2" name="categorie" onChange={handleChange}>
-                <option value="">catégorie</option>
-                <option>Technique</option>
-                <option>Matériel</option>
-                <option>Compte</option>
-                <option>Facturation</option>
-            </select>
-
-            <select className="form-control m-2" name="priorite" onChange={handleChange}>
-                <option value="">Priorités</option>
-                <option>Basse</option>
-                <option>Moyenne</option>
-                <option>Haute</option>
-                <option>Urgente</option>
-            </select>
-
-            <button className="btn btn-primary m-2" type="submit">Create</button>
-            <Link to="/tickets">
-                <button className="btn btn-warning" type="button">Retour</button>
-            </Link>
-
-            </form>
-        </div>
-
-    );
-}
- 
 export default AddTicket;
-

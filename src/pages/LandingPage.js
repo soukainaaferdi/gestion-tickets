@@ -57,31 +57,3 @@ const LandingPage = () => {
 }
 
 export default LandingPage;
-/*
-      <div className="row mt-5">
-        <div className="col-md-3">
-          <div className="card p-3 shadow">
-            <h4>Tickets ouverts</h4>
-            <p>...</p>
-          </div>
-        </div>
-        <div className="col-md-3">
-          <div className="card p-3 shadow">
-            <h4>Tickets en retard</h4>
-            <p>...</p>
-          </div>
-        </div>
-        <div className="col-md-3">
-          <div className="card p-3 shadow">
-            <h4>Temps moyen de résolution</h4>
-            <p>...</p>
-          </div>
-        </div>
-        <div className="col-md-3">
-          <div className="card p-3 shadow">
-            <h4>Taux de résolution</h4>
-            <p>...</p>
-          </div>
-        </div>
-      </div>
-      */
