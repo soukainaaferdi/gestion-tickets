@@ -6,8 +6,8 @@
       "description": "Impossible de se connecter à l’application interne avec des identifiants valides.",
       "categorie": "Technique",
       "priorite": "Haute",
-      "statut": "Résolu",
-      "nomClient": "soukaina1",
+      "statut": "En cours",
+      "nomClient": "soukaina",
       "email": "aferdisoukaina8@gmail.com",
       "dateCreation": "2025-12-09T09:15:00.000Z",
       "dateResolution": "2025-12-17T22:39:48.561Z"
@@ -92,9 +92,9 @@
       "description": "aaaaaaaa",
       "categorie": "Matériel",
       "priorite": "Moyenne",
-      "statut": "Nouveau",
+      "statut": "Résolu",
       "dateCreation": "2025-12-17T18:58:49.064Z",
-      "dateResolution": null
+      "dateResolution": "2025-12-18T08:57:53.886Z"
     },
     {
       "id": "9713",
@@ -142,6 +142,18 @@
       "priorite": "Haute",
       "statut": "Nouveau",
       "dateCreation": "2025-12-17T19:07:57.923Z",
+      "dateResolution": null
+    },
+    {
+      "id": "298c",
+      "nomClient": "douaa",
+      "email": "douaa@gmail.com",
+      "titre": "title",
+      "description": "desc",
+      "categorie": "Matériel",
+      "priorite": "Basse",
+      "statut": "Nouveau",
+      "dateCreation": "2025-12-18T09:09:45.313Z",
       "dateResolution": null
     }
   ]

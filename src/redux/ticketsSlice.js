@@ -1,4 +1,4 @@
-import {getTickets,getTicketById,createTicket,updateTicket,deleteTicket,} from "../api/ticketsApi"
+import {getTickets, getTicketById, createTicket, updateTicket, deleteTicket,} from "../api/ticketsApi"
 import { createSlice } from "@reduxjs/toolkit";
 
 const ticketsSlice = createSlice({

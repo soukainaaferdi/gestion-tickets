@@ -1,5 +1,3 @@
-
-import axios from "axios";
 import "../pages/style.css"
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,7 +9,6 @@ const TicketsList = () => {
   const tickets = useSelector(state => state.tickets.tickets);
 
   const [visible, setVisible] = useState(7)
-
 
   const handleVisible=()=>{
     setVisible((t) => t + 7)
@@ -35,8 +32,6 @@ const TicketsList = () => {
         Search
       </button>
     </form>
-
-
     <div>
       <Link to="/tickets/ajouter">
         <button className="btn btn-success mx-2">Ajouter +</button>

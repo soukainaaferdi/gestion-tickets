@@ -1,10 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const [tickets, setTickets] = useState([]);
-  const [formData,setFormData]=useState('')
+  const [formData, setFormData]= useState('')
 
   useEffect(() => {
     axios
@@ -13,12 +12,10 @@ const Dashboard = () => {
       .catch(console.error);
   }, []);
 
-  const ticketsFiltrés = formData
-  ? tickets.filter(t => {
-      const ticketDate = new Date(t.dateCreation).toISOString().split("T")[0];
-      return ticketDate === formData;
-    })
-  : tickets;
+  const ticketsFiltres = formData ? 
+    tickets.filter(t => {
+    const ticketDate = new Date(t.dateCreation).toISOString().split("T")[0];
+    return ticketDate === formData }) : tickets;
 
   
   const openTickets = tickets.filter(
@@ -34,13 +31,8 @@ const Dashboard = () => {
   const resolvedTickets = tickets.filter(t => t.dateResolution);
   const avgResolutionTime =
     resolvedTickets.length > 0
-      ? Math.round(
-          resolvedTickets.reduce((sum, t) => {
-            return (
-              sum +
-              (new Date(t.dateResolution) - new Date(t.dateCreation)) /
-                (1000 * 60 * 60)
-            );
+      ? Math.round( resolvedTickets.reduce((sum, t) => {
+          return (sum + (new Date(t.dateResolution) - new Date(t.dateCreation)) /(1000 * 60 * 60))
           }, 0) / resolvedTickets.length
         )
       : 0;
@@ -103,15 +95,13 @@ const Dashboard = () => {
             </tr>
           </thead>
           <tbody>
-            {ticketsFiltrés.slice(-5).map(t => (
+            {ticketsFiltres.slice(-5).map(t => (
               <tr key={t.id}>
                 <td>{t.titre}</td>
                 <td>{t.statut}</td>
                 <td>{t.priorite}</td>
                 <td>
                   {new Date(t.dateCreation).toLocaleDateString("fr-FR")}
-                
-
                 </td>
               </tr>
             ))}
