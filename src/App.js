@@ -30,7 +30,7 @@ import TicketDetail from "./pages/TicketDetail";
 import AddTicket from "./pages/AddTicket";
 import EditTicket from "./pages/EditTicket";
 import Navbar from "./components/Navbar";
-import Navbar from "./components/Navbar"; 
+
 
 function App() {
   return (
