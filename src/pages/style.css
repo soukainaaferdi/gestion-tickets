@@ -251,7 +251,7 @@ select.select1 {
   background:#0b1c2d ;
   box-shadow: 0 4px 15px rgba(15, 23, 42, 0.08);
   padding: 0.8rem 1rem;
-  border-radius: 12px;
+ 
   
  
 }
@@ -369,5 +369,7 @@ select.select1 {
   background: #081421;
   font-size: 14px;
 }
-
+.c{
+   background: #123151;
+}
 
