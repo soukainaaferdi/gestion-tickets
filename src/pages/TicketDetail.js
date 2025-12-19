@@ -23,11 +23,11 @@ const TicketDetail = () => {
   return (
     <div className="d-flex justify-content-center align-items-start mt-4">
       <div className="card1 card shadow-lg">
-        <div className="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+        <div className="card-header c text-white d-flex justify-content-between align-items-center">
           <h5 className="mb-0">Détails du ticket</h5>
           <div className="d-flex gap-2">
             <Link to={`/tickets/modifier/${ticket.id}`}>
-              <button className="btn btn-warning btn-sm">Modifier</button>
+              <button className="btn btn-primary btn-sm">Modifier</button>
             </Link>
           </div>
         </div>

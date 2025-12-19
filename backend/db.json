@@ -1,6 +1,7 @@
 {
   "tickets": [
     {
+<<<<<<< HEAD
       "id": "3",
       "titre": "Erreur de connexion à l’application",
       "description": "Impossible de se connecter à l’application interne avec des identifiants valides.",
@@ -13,16 +14,18 @@
       "dateResolution": "2025-12-17T22:39:48.561Z"
     },
     {
+=======
+>>>>>>> 01e3d0b37132728ba00d6e645b4526664e6e0893
       "id": "4",
       "titre": "Facture client incorrecte",
       "description": "Le montant affiché sur la facture ne correspond pas au service facturé.",
       "categorie": "Facturation",
       "priorite": "Basse",
-      "statut": "Résolu",
+      "statut": "En cours",
       "nomClient": "abkour",
       "email": "clientd@email.com",
       "dateCreation": "2025-12-08T11:45:00.000Z",
-      "dateResolution": "2025-12-16T13:48:58.101Z"
+      "dateResolution": "2025-12-18T13:00:56.882Z"
     },
     {
       "id": "f9d3",
@@ -73,18 +76,6 @@
       "dateResolution": "2025-12-17T21:10:53.145Z"
     },
     {
-      "id": "6422",
-      "nomClient": "2",
-      "email": "abkour@gmail.com",
-      "titre": "Title2",
-      "description": "s",
-      "categorie": "Technique",
-      "priorite": "Basse",
-      "statut": "Résolu",
-      "dateCreation": "2025-12-17T18:58:36.679Z",
-      "dateResolution": "2025-12-17T21:16:11.687Z"
-    },
-    {
       "id": "186d",
       "nomClient": "3",
       "email": "abkour@gmail.com",
@@ -92,9 +83,13 @@
       "description": "aaaaaaaa",
       "categorie": "Matériel",
       "priorite": "Moyenne",
-      "statut": "Résolu",
+      "statut": "Fermé",
       "dateCreation": "2025-12-17T18:58:49.064Z",
+<<<<<<< HEAD
       "dateResolution": "2025-12-18T08:57:53.886Z"
+=======
+      "dateResolution": "2025-12-18T12:59:51.746Z"
+>>>>>>> 01e3d0b37132728ba00d6e645b4526664e6e0893
     },
     {
       "id": "9713",
@@ -128,9 +123,9 @@
       "description": "ljljsljlq",
       "categorie": "Matériel",
       "priorite": "Urgente",
-      "statut": "Nouveau",
+      "statut": "Résolu",
       "dateCreation": "2025-12-17T19:07:38.333Z",
-      "dateResolution": null
+      "dateResolution": "2025-12-18T09:27:47.699Z"
     },
     {
       "id": "2253",

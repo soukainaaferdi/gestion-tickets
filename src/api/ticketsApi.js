@@ -1,4 +1,5 @@
 
+
 import axios from "axios";
 export const getTickets = () =>   axios.get("http://localhost:5000/tickets");
 export const getTicketById = (id) =>   axios.get(`http://localhost:5000/tickets/${id}`);
