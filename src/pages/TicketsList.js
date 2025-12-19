@@ -22,7 +22,7 @@ const TicketsList = () => {
   }, [dispatch]);
 
   return (
- <div className="container py-4">
+ <div className="container py-4 ">
   <div className="d-flex justify-content-between align-items-center mb-3">
     <form className="d-flex" role="search">
       <input

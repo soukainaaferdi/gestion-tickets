@@ -1,9 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
-
+import "../pages/style.css"
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div className="container">
+    <nav className="navbar navbar-expand-lg navbar-dark ">
+      
+      <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           DigiServices
         </Link>
@@ -17,7 +18,7 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse d-flex" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <NavLink className="nav-link" to="/">
