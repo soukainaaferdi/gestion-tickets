@@ -60,19 +60,19 @@
   background-color: #f8f9fa;
   min-height: 100vh;
 }
-/* Footer ثابت أسفل الصفحة */
+
 .footer {
-  position: fixed;  /* يبقى دائما فالقاع */
-  bottom: 0;        /* أسفل الصفحة */
+  position: fixed;  
+  bottom: 0;        
   left: 0;
-  width: 100%;      /* يغطي كامل العرض */
+  width: 100%;      
   z-index: 1000; 
-     /* فوق المحتوى إذا لزم */
+    
 }
 
-/* محتوى الصفحة مايتغطاش بالfooter */
+
 .content {
-  padding-bottom: 60px; /* نفس ارتفاع footer + مسافة */
+  padding-bottom: 60px; 
 }
 .hero-title {
   font-size: 4rem;   
@@ -113,7 +113,7 @@ margin-left: 90px;
  }
  .table-wrapper {
     border-radius: 10px;
-    overflow: hidden; /* مهم بزاف */
+    overflow: hidden;
     background-color: white;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }

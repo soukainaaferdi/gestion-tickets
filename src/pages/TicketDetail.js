@@ -1,148 +1,85 @@
-
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import TicketItem from "../components/TicketItem";
+import { fetchTicketById } from "../redux/ticketsSlice";
 import { calculateHours } from "../utils/timeUtils";
-import "./style.css"
+import "./style.css";
 
 const TicketDetail = () => {
-    const { id } = useParams();
-    const [ticket, setTicket] = useState(null);
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const ticket = useSelector(state => state.tickets.currentTicket);
 
-    useEffect(() => {
-        axios
-            .get(`http://localhost:5000/tickets/${id}`)
-            .then(res => setTicket(res.data))
-            .catch(console.error);
-    }, [id]);
+  useEffect(() => {
+    dispatch(fetchTicketById(id));
+  }, [dispatch, id]);
 
-    if (!ticket) return null;
+  if (!ticket) return null;
 
-    const hours = calculateHours(ticket.dateCreation);
-    const isLate = hours >= 48 && ticket.statut !== "Résolu" &&  ticket.statut !== "Fermé";
+  const hours = calculateHours(ticket.dateCreation);
+  const isLate = hours >= 48 && ticket.statut !== "Résolu" && ticket.statut !== "Fermé";
 
-    return (
-        <div className="d-flex justify-content-center align-items-start mt-4">
-            <div className=" card1 card shadow-lg" >
-                <div className="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                    <h5 className="mb-0">Détails du ticket</h5>
-                    <div className="d-flex gap-2">
-                        <Link to={`/tickets/modifier/${ticket.id}`}>
-                            <button className="btn btn-warning btn-sm"> Modifier</button>
-                        </Link>
-                    </div>
-                </div>
+  return (
+    <div className="d-flex justify-content-center align-items-start mt-4">
+      <div className="card1 card shadow-lg">
+        <div className="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+          <h5 className="mb-0">Détails du ticket</h5>
+          <div className="d-flex gap-2">
+            <Link to={`/tickets/modifier/${ticket.id}`}>
+              <button className="btn btn-warning btn-sm">Modifier</button>
+            </Link>
+          </div>
+        </div>
 
         <div className="card-body">
-            <h4 className="text-center mb-4">
-                {ticket.titre}
-            </h4>
-        <div className="row">
+          <h4 className="text-center mb-4">{ticket.titre}</h4>
+          <div className="row">
             <div className="col-md-6">
-                <p> <strong>Nom :</strong> {ticket.nomClient}  </p>
-                <p> <strong>Email :</strong> {ticket.email}    </p>
-                <p>  <strong>Catégorie :</strong> {ticket.categorie}  </p>
-                <p>
-                    <strong>Priorité :</strong>
-                    <span className="badge bg-info ms-2">
-                        {ticket.priorite}
-                    </span>
-                </p>
+              <p><strong>Nom :</strong> {ticket.nomClient}</p>
+              <p><strong>Email :</strong> {ticket.email}</p>
+              <p><strong>Catégorie :</strong> {ticket.categorie}</p>
+              <p>
+                <strong>Priorité :</strong>
+                <span className="badge bg-info ms-2">{ticket.priorite}</span>
+              </p>
             </div>
-    <div className="col-md-6">
-        <p>
-        <strong>Statut :</strong>
-        <span className={`badge ms-2 ${
-        ticket.statut === "Résolu" ? "bg-success" : ticket.statut === "En cours" ? "bg-warning" : "bg-secondary"}`}>
-            {ticket.statut}
-        </span>
-        </p>
-        <p> <strong>Date de création : </strong> 
-        {new Date(ticket.dateCreation).toLocaleString("fr-FR")}
-        </p>
 
-        <p> <strong>Date de résolution : </strong> 
-        {ticket.dateResolution ? (new Date(ticket.dateResolution).toLocaleString("fr-FR")) : (
-            <span className="text-danger"> Non résolu </span>
-        )}
-        </p>
+            <div className="col-md-6">
+              <p>
+                <strong>Statut :</strong>
+                <span className={`badge ms-2 ${
+                  ticket.statut === "Résolu" ? "bg-success" :
+                  ticket.statut === "En cours" ? "bg-warning" : "bg-secondary"
+                }`}>{ticket.statut}</span>
+              </p>
+              <p><strong>Date de création :</strong><br />{new Date(ticket.dateCreation).toLocaleString("fr-FR")}</p>
+              <p><strong>Date de résolution :</strong><br />
+                {ticket.dateResolution ? (
+                  new Date(ticket.dateResolution).toLocaleString("fr-FR")
+                ) : (
+                  <span className="text-danger">Non résolu</span>
+                )}
+              </p>
             </div>
-        </div>
-        <div className="d-flex justify-content-between align-items-center mt-3 p-3 bg-light rounded">
-            <div>
-                <strong>Temps écoulé :</strong>
-                <span className="badge bg-dark ms-2">{hours} h </span>
-            </div>
-        <div>
-        {isLate ? (<span className="badge bg-danger"> En retard </span>
-            ) : (<span className="badge bg-success"> OK </span>
-            )}
-        </div>
-        </div>
+          </div>
 
-        <div className="mt-4 p-3 border rounded">
+          <div className="d-flex justify-content-between align-items-center mt-3 p-3 bg-light rounded">
+            <div><strong>Temps écoulé :</strong> <span className="badge bg-dark ms-2">{hours} h</span></div>
+            <div>{isLate ? <span className="badge bg-danger">En retard</span> : <span className="badge bg-success">OK</span>}</div>
+          </div>
+
+          <div className="mt-4 p-3 border rounded">
             <h6>Description</h6>
             <p className="mb-0">{ticket.description}</p>
+          </div>
+
+          <hr />
+          <TicketItem ticket={ticket} />
         </div>
-        <hr/>
-        <TicketItem ticket={ticket} setTicket={setTicket} />
-        
-            </div>
-            </div>
-        </div>
-    );
-}
+      </div>
+    </div>
+  );
+};
+
 export default TicketDetail;
-
-
-
-// import { useEffect } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { Link, useParams } from "react-router-dom";
-// import TicketItem from "../components/TicketItem";
-// import { fetchTicketById } from "../redux/ticketsSlice";
-// import { calculateHours } from "../utils/timeUtils";
-
-// const TicketDetail = () => {
-//   const { id } = useParams();
-//   const ticket = useSelector(state => state.tickets.currentTicket);
-//   const dispatch = useDispatch();
-
-//   useEffect(() => {
-//     dispatch(fetchTicketById(id));
-//   }, [dispatch, id]);
-
-//   if (!ticket) return null;
-
-//   const hours = calculateHours(ticket.dateCreation);
-//   const isLate = hours >= 48 && ticket.statut !== "Résolu" && ticket.statut !== "Fermé";
-
-//   return (
-//     <div className="d-flex justify-content-center align-items-center">
-//       <div className="row">
-//         <TicketItem ticket={ticket} />
-//         <div className="card p-2 mt-3 shadow-lg">
-//           <h2 className="card-title text-center">{ticket.titre}</h2>
-//           <div className="card-body">
-//             <p>{ticket.description}</p>
-//             <p><strong>Nom :</strong> {ticket.nomClient}</p>
-//             <p><strong>Email :</strong> {ticket.email}</p>
-//             <p><strong>Catégorie :</strong> {ticket.categorie}</p>
-//             <p><strong>Priorité :</strong> {ticket.priorite}</p>
-//             <p><strong>Statut :</strong> {ticket.statut}</p>
-//             <p><strong>Date de création :</strong> {new Date(ticket.dateCreation).toLocaleString("fr-FR")}</p>
-//             <p><strong>Temps écoulé :</strong> {hours}h {isLate && <span className="text-danger"> En retard</span>}</p>
-//             <p><strong>Date de résolution :</strong> {ticket.dateResolution ? new Date(ticket.dateResolution).toLocaleString("fr-FR") : "Non résolu"}</p>
-//             <Link to="/tickets"><button className="btn btn-warning">Retour</button></Link>
-//             <Link to={`/tickets/modifier/${ticket.id}`}><button className="btn btn-primary mx-2">Modifier</button></Link>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-
-// };
-
-// export default TicketDetail;
-
