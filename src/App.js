@@ -29,12 +29,12 @@ import TicketsList from "./pages/TicketsList";
 import TicketDetail from "./pages/TicketDetail";
 import AddTicket from "./pages/AddTicket";
 import EditTicket from "./pages/EditTicket";
-import Navbar from "./components/Navbar"; // ⬅️ زيديه هنا
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <Router>
-      <Navbar /> {/* ⬅️ هنا بالضبط */}
+      <Navbar /> 
 
       <Routes>
         <Route path="/" element={<LandingPage />} />

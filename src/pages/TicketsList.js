@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import { fetchTickets, supprimerTicket } from "../redux/ticketsSlice";
 
 const TicketsList = () => {
+  const [search, setSearch] = useState("")
   const dispatch = useDispatch();
   const tickets = useSelector(state => state.tickets.tickets);
-
   const [visible, setVisible] = useState(7)
 
   const handleVisible=()=>{
@@ -22,15 +22,8 @@ const TicketsList = () => {
  <div className="container py-4">
   <div className="d-flex justify-content-between align-items-center mb-3">
     <form className="d-flex" role="search">
-      <input
-        className="form-control me-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-      />
-      <button className="btn btn-outline-dark" type="submit">
-        Search
-      </button>
+      <input className="form-control" type="search" placeholder="Search" aria-label="Search"
+      onChange={(e)=>setSearch(e.target.value)} value={search} />
     </form>
     <div>
       <Link to="/tickets/ajouter">
@@ -53,7 +46,8 @@ const TicketsList = () => {
         </tr>
       </thead>
       <tbody>
-        {tickets.slice(0, visible).map(ticket => (
+        {tickets.slice(0, visible).filter(ticket => ticket.titre.toLowerCase().includes(search.toLowerCase()))
+        .map(ticket => (
           <tr key={ticket.id}>
             <td>{ticket.nomClient}</td>
             <td>{ticket.email}</td>
