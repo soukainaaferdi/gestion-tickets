@@ -6,7 +6,7 @@
       "description": "Impossible de se connecter à l’application interne avec des identifiants valides.",
       "categorie": "Technique",
       "priorite": "Haute",
-      "statut": "Résolu",
+      "statut": "En cours",
       "nomClient": "soukaina",
       "email": "aferdisoukaina8@gmail.com",
       "dateCreation": "2025-12-09T09:15:00.000Z",
@@ -18,7 +18,7 @@
       "description": "Le montant affiché sur la facture ne correspond pas au service facturé.",
       "categorie": "Facturation",
       "priorite": "Basse",
-      "statut": "Résolu",
+      "statut": "En cours",
       "nomClient": "abkour",
       "email": "clientd@email.com",
       "dateCreation": "2025-12-08T11:45:00.000Z",
@@ -34,7 +34,7 @@
       "priorite": "Moyenne",
       "statut": "Résolu",
       "dateCreation": "2025-12-13T23:49:02.000Z",
-      "dateResolution": "2025-12-17T21:29:10.384Z"
+      "dateResolution": "2025-12-20T21:16:54.972Z"
     },
     {
       "id": "b865",
@@ -44,33 +44,21 @@
       "description": "description",
       "categorie": "Technique",
       "priorite": "Moyenne",
-      "statut": "Résolu",
+      "statut": "En cours",
       "dateCreation": "2025-12-17T17:31:45.856Z",
       "dateResolution": "2025-12-17T17:56:28.334Z"
     },
     {
       "id": "b5a7",
-      "nomClient": "salma",
+      "nomClient": "salma1",
       "email": "salma@gmail.com",
       "titre": "title",
       "description": "desc",
       "categorie": "Matériel",
       "priorite": "Haute",
-      "statut": "Résolu",
+      "statut": "En cours",
       "dateCreation": "2025-12-17T18:57:26.103Z",
-      "dateResolution": "2025-12-17T21:10:43.033Z"
-    },
-    {
-      "id": "d18c",
-      "nomClient": "1",
-      "email": "soukaina@gmail.com",
-      "titre": "title",
-      "description": "desc",
-      "categorie": "Technique",
-      "priorite": "Basse",
-      "statut": "Résolu",
-      "dateCreation": "2025-12-17T18:57:50.047Z",
-      "dateResolution": "2025-12-17T21:10:53.145Z"
+      "dateResolution": "2025-12-20T21:11:59.956Z"
     },
     {
       "id": "6422",
@@ -82,7 +70,7 @@
       "priorite": "Basse",
       "statut": "Résolu",
       "dateCreation": "2025-12-17T18:58:36.679Z",
-      "dateResolution": "2025-12-17T21:16:11.687Z"
+      "dateResolution": "2025-12-20T21:16:48.941Z"
     },
     {
       "id": "186d",
@@ -154,6 +142,66 @@
       "priorite": "Basse",
       "statut": "Nouveau",
       "dateCreation": "2025-12-18T09:09:45.313Z",
+      "dateResolution": null
+    },
+    {
+      "id": "ff8e",
+      "nomClient": "douaa",
+      "email": "douaa@gmail.com",
+      "titre": "Title",
+      "description": "description",
+      "categorie": "Compte",
+      "priorite": "Urgente",
+      "statut": "Nouveau",
+      "dateCreation": "2025-12-20T17:51:34.562Z",
+      "dateResolution": null
+    },
+    {
+      "id": "d38b",
+      "nomClient": "soukaina",
+      "email": "soukaina@gmail.com",
+      "titre": "problème ",
+      "description": "description de problème ",
+      "categorie": "Matériel",
+      "priorite": "Moyenne",
+      "statut": "Nouveau",
+      "dateCreation": "2025-12-20T18:22:25.671Z",
+      "dateResolution": null
+    },
+    {
+      "id": "23f8",
+      "nomClient": "salma",
+      "email": "salma@gmail.com",
+      "titre": "titre",
+      "description": "descr",
+      "categorie": "Facturation",
+      "priorite": "Moyenne",
+      "statut": "Nouveau",
+      "dateCreation": "2025-12-20T18:23:11.122Z",
+      "dateResolution": null
+    },
+    {
+      "id": "92db",
+      "nomClient": "Test",
+      "email": "test@gmail.com",
+      "titre": "test",
+      "description": "desc",
+      "categorie": "Matériel",
+      "priorite": "Haute",
+      "statut": "Nouveau",
+      "dateCreation": "2025-12-20T21:15:27.682Z",
+      "dateResolution": null
+    },
+    {
+      "id": "d644",
+      "nomClient": "Douaa",
+      "email": "Douaa@gmail.com",
+      "titre": "Titre",
+      "description": "Description",
+      "categorie": "Matériel",
+      "priorite": "Moyenne",
+      "statut": "Nouveau",
+      "dateCreation": "2025-12-20T22:15:46.351Z",
       "dateResolution": null
     }
   ]

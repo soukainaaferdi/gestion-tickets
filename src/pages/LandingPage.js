@@ -8,28 +8,17 @@ const LandingPage = () => {
     
       <div className="row align-items-center">
 
-        {/* <div className="col-md-6 text-center">
-          <img 
-            src="/Sécrétaire___Loup_party__-removebg-preview (2).png" 
-            alt="Support Team" 
-            className="img-fluid img-hero" 
-          />
-        </div> */}
-
-        <div className=" text-center">
+        <div className="text-center">
           <h1 className="hero-title  ">
-           Gestion de
-            Tickets Support
+           Gestion de Tickets Support
           </h1>
           <p className="lead">
             DigiServices, une entreprise IT de Casablanca avec 200 employés,<br />
             reçoit quotidiennement des demandes d'assistance...
           </p>
-          {/* <Link to="/dashboard">
-            <button className="btn btn-light btn-dashboard mt-3">
-              Accéder à l'application
-            </button>
-          </Link> */}
+          <Link to="/dashboard">
+          <button className="btnL">Accéder a l'application</button>
+          </Link>
         </div>
 
       </div>

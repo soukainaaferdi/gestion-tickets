@@ -12,7 +12,7 @@
     }
     .hero h1 {
       font-size: 50px;
-      margin-bottom: 15px;
+      margin-bottom: 0px;
     }
     .hero p {
       max-width: 700px;
@@ -251,9 +251,6 @@ select.select1 {
   background:#0b1c2d ;
   box-shadow: 0 4px 15px rgba(15, 23, 42, 0.08);
   padding: 0.8rem 1rem;
- 
-  
- 
 }
 
 .navbar .navbar-brand {
@@ -311,7 +308,7 @@ select.select1 {
 }
 
 .team-card {
-  background: #ffffff;
+  background: #6366f1;
   border-radius: 14px;
   padding: 25px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -372,4 +369,28 @@ select.select1 {
 .c{
    background: #123151;
 }
-
+.team-card h5{
+  font-size: large;
+  color: white;
+}
+.btnL{
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border: none;
+}
+.btnL:hover{
+  background-color: #6366f1;
+  color: white;
+  padding: 17px;
+}
+.btnT{
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border: none;
+  background-color: #494ceb;
+  color: white;
+}

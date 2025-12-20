@@ -1,11 +1,9 @@
  import { useState } from "react";
 import { useDispatch } from "react-redux";
-
-
-
  import { useNavigate } from "react-router-dom";
  import { addTicket } from "../redux/ticketsSlice";
 import "../pages/style.css"
+
 const AddTicket = () => {
    const navigate = useNavigate();
    const dispatch = useDispatch();

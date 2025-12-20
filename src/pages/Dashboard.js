@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
+  
   const [tickets, setTickets] = useState([]);
   const [formData, setFormData]= useState('')
 
@@ -47,6 +49,11 @@ const Dashboard = () => {
     <div className="container mt-4">
       <div className="d-flex justify-content-between">
         <h2 className="mb-4">Dashboard</h2>
+        <Link to="/tickets">
+        <button className="btnT">
+          Liste des tickets
+        </button>
+          </Link>
       </div>
       <div className="mb-3">
         <label>Choisir une date : </label>
