@@ -7,16 +7,16 @@ import "../pages/style.css"
 const AddTicket = () => {
    const navigate = useNavigate();
    const dispatch = useDispatch();
-  const [ticket, setTicket] = useState({
+   const [ticket, setTicket] = useState({
     nomClient: "",
      email: "",
      titre: "",
-    description: "",
+     description: "",
      categorie: "",
      priorite: "",
      statut: "Nouveau",
      dateCreation: new Date().toISOString(),
-    dateResolution: null
+     dateResolution: null
    });
 
    const handleChange = (e) => {
@@ -25,8 +25,8 @@ const AddTicket = () => {
 
    const handleSubmit = (e) => {
      e.preventDefault();
-     if (!ticket.titre || !ticket.description || !ticket.categorie || !ticket.priorite) {
-       alert("Entrer tous les champs");
+     if (!ticket.titre?.trim() || !ticket.description?.trim() || !ticket.categorie || !ticket.priorite) {
+       alert("Veuillez remplir tous les champs");
        return;
      }
      dispatch(addTicket(ticket));

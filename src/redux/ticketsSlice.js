@@ -25,7 +25,7 @@ export const fetchTickets = () => (dispatch) => {
     .catch(console.error);
 };
 
-// Get single ticket by id
+
 export const fetchTicketById = (id) => (dispatch) => {
   getTicketById(id)
     .then((res) => {
@@ -34,7 +34,7 @@ export const fetchTicketById = (id) => (dispatch) => {
     .catch(console.error);
 };
 
-// Add new ticket
+
 export const addTicket = (ticket) => (dispatch) => {
   createTicket(ticket)
     .then(() => {
@@ -43,7 +43,7 @@ export const addTicket = (ticket) => (dispatch) => {
     .catch(console.error);
 };
 
-// Edit ticket
+
 export const editTicket = (id, ticket) => (dispatch) => {
   updateTicket(id, ticket)
     .then((res) => {
@@ -52,7 +52,7 @@ export const editTicket = (id, ticket) => (dispatch) => {
     })
     .catch(console.error);
 };
-// Delete ticket
+
 export const supprimerTicket = (id) => (dispatch) => {
   deleteTicket(id)
     .then(() => {

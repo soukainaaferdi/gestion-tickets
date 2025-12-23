@@ -25,7 +25,9 @@ const EditTicket = () => {
   }, [dispatch, id]);
 
   useEffect(() => {
-    if (ticketFromStore) setTicket(ticketFromStore);
+    if (ticketFromStore) {
+      setTicket(ticketFromStore)
+    };
   }, [ticketFromStore]);
 
   const handleChange = (e) => {

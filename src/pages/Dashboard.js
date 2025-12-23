@@ -29,8 +29,10 @@ const Dashboard = () => {
     const diff = Date.now() - new Date(t.dateCreation).getTime();
     return diff > 48 * 60 * 60 * 1000;
   });
-
+ 
   const resolvedTickets = tickets.filter(t => t.dateResolution);
+
+
   const avgResolutionTime =
     resolvedTickets.length > 0
       ? Math.round( resolvedTickets.reduce((sum, t) => {
@@ -38,7 +40,7 @@ const Dashboard = () => {
           }, 0) / resolvedTickets.length
         )
       : 0;
-
+      
 
   const resolutionRate =
     tickets.length > 0

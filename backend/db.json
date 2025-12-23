@@ -10,7 +10,7 @@
       "nomClient": "soukaina",
       "email": "aferdisoukaina8@gmail.com",
       "dateCreation": "2025-12-09T09:15:00.000Z",
-      "dateResolution": "2025-12-19T22:04:22.406Z"
+      "dateResolution": null
     },
     {
       "id": "4",
@@ -22,7 +22,7 @@
       "nomClient": "abkour",
       "email": "clientd@email.com",
       "dateCreation": "2025-12-08T11:45:00.000Z",
-      "dateResolution": "2025-12-16T13:48:58.101Z"
+      "dateResolution": null
     },
     {
       "id": "f9d3",
@@ -56,9 +56,9 @@
       "description": "desc",
       "categorie": "Matériel",
       "priorite": "Haute",
-      "statut": "En cours",
+      "statut": "Résolu",
       "dateCreation": "2025-12-17T18:57:26.103Z",
-      "dateResolution": "2025-12-20T21:11:59.956Z"
+      "dateResolution": "2025-12-23T10:15:49.270Z"
     },
     {
       "id": "6422",
@@ -80,7 +80,7 @@
       "description": "aaaaaaaa",
       "categorie": "Matériel",
       "priorite": "Moyenne",
-      "statut": "Résolu",
+      "statut": "En cours",
       "dateCreation": "2025-12-17T18:58:49.064Z",
       "dateResolution": "2025-12-18T08:57:53.886Z"
     },
@@ -117,7 +117,7 @@
       "categorie": "Matériel",
       "priorite": "Urgente",
       "statut": "Nouveau",
-      "dateCreation": "2025-12-17T19:07:38.333Z",
+      "dateCreation": "2025-12-18T19:07:38.333Z",
       "dateResolution": null
     },
     {
@@ -129,7 +129,7 @@
       "categorie": "Facturation",
       "priorite": "Haute",
       "statut": "Nouveau",
-      "dateCreation": "2025-12-17T19:07:57.923Z",
+      "dateCreation": "2025-12-18T19:07:57.923Z",
       "dateResolution": null
     },
     {
@@ -165,7 +165,7 @@
       "categorie": "Matériel",
       "priorite": "Moyenne",
       "statut": "Nouveau",
-      "dateCreation": "2025-12-20T18:22:25.671Z",
+      "dateCreation": "2025-12-20T19:22:25.671Z",
       "dateResolution": null
     },
     {
@@ -202,6 +202,18 @@
       "priorite": "Moyenne",
       "statut": "Nouveau",
       "dateCreation": "2025-12-20T22:15:46.351Z",
+      "dateResolution": null
+    },
+    {
+      "id": "fba6",
+      "nomClient": "Douaa",
+      "email": "Douaa@gmail.com",
+      "titre": "TITLE",
+      "description": "DESC",
+      "categorie": "Technique",
+      "priorite": "Basse",
+      "statut": "Nouveau",
+      "dateCreation": "2025-12-23T10:11:41.040Z",
       "dateResolution": null
     }
   ]

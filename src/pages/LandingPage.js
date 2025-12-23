@@ -13,8 +13,8 @@ const LandingPage = () => {
            Gestion de Tickets Support
           </h1>
           <p className="lead">
-            DigiServices, une entreprise IT de Casablanca avec 200 employés,<br />
-            reçoit quotidiennement des demandes d'assistance...
+            Une application web moderne dédiée à la gestion des tickets de support,<br></br>
+            permettant le suivi, la priorisation et l’analyse des demandes clients.
           </p>
           <Link to="/dashboard">
           <button className="btnL">Accéder a l'application</button>

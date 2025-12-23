@@ -53,8 +53,10 @@ const TicketDetail = () => {
                   ticket.statut === "En cours" ? "bg-warning" : "bg-secondary"
                 }`}>{ticket.statut}</span>
               </p>
-              <p><strong>Date de création :</strong><br />{new Date(ticket.dateCreation).toLocaleString("fr-FR")}</p>
-              <p><strong>Date de résolution :</strong><br />
+              <strong>Date de création :</strong>
+              <p className="mt-2">{new Date(ticket.dateCreation).toLocaleString("fr-FR")}</p>
+              <strong>Date de résolution :</strong>
+              <p className="mt-2">
                 {ticket.dateResolution ? (
                   new Date(ticket.dateResolution).toLocaleString("fr-FR")
                 ) : (
